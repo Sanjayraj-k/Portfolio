@@ -53,7 +53,9 @@ const About = ({ textEnter, textLeave }) => {
         >
           <div className="image-wrapper">
             <div className="glow-effect"></div>
-            <div className="profile-image"></div>
+            <div className="profile-image">
+              <img src="https://th.bing.com/th/id/OIP.SxkjVFtd3ZlmSRWnSSzlOgHaFd?rs=1&pid=ImgDetMain" alt="Profile" />
+            </div>
           </div>
         </motion.div>
       </div>

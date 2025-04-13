@@ -31,22 +31,22 @@ const HomePage = ({
       id: 1,
       title: "Project Completion",
       description: "Successfully launched a full-stack application with 10k+ users",
-      icon: <FiCode />,
-      date: "June 2023"
+      date: "June 2023",
+      image: "https://th.bing.com/th/id/OIP.pXGBS5JBR3q7gXKHYPjurQHaFj?rs=1&pid=ImgDetMain" // Replace with actual image path
     },
     {
       id: 2,
       title: "Award Winner",
       description: "Received Best Developer Award at Tech Conference 2023",
-      icon: <FiAward />,
-      date: "March 2023"
+      date: "March 2023",
+      image: "https://example.com/award-winner.jpg" // Replace with actual image path
     },
     {
       id: 3,
       title: "Community Growth",
       description: "Built developer community with 500+ active members",
-      icon: <FiUsers />,
-      date: "January 2023"
+      date: "January 2023",
+      image: "https://example.com/community-growth.jpg" // Replace with actual image path
     }
   ];
 
@@ -58,13 +58,15 @@ const HomePage = ({
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Auto-rotate achievements
+  // Auto-slide effect
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentAchievement((prev) => (prev + 1) % achievements.length);
-    }, 5000);
+      nextAchievement();
+    }, 10000); // Change slide every 4 seconds
+
+    // Clear interval on component unmount
     return () => clearInterval(interval);
-  }, [achievements.length]);
+  }, [currentAchievement]); // Dependency on currentAchievement to restart interval if needed
 
   const nextAchievement = () => {
     setCurrentAchievement((prev) => (prev + 1) % achievements.length);
@@ -157,14 +159,24 @@ const HomePage = ({
             </div>
 
             {/* Achievements Slider */}
-            <div className="achievements-slider">
+            <div className="achievements-slider " style={{"margin-left":"50px"}}>
               <div className="slider-controls">
-                <button onClick={prevAchievement} className="slider-arrow">
+                <motion.button 
+                  onClick={prevAchievement} 
+                  className="slider-arrow"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
                   <FiChevronLeft />
-                </button>
-                <button onClick={nextAchievement} className="slider-arrow">
+                </motion.button>
+                <motion.button 
+                  onClick={nextAchievement} 
+                  className="slider-arrow"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
                   <FiChevronRight />
-                </button>
+                </motion.button>
               </div>
               
               <AnimatePresence mode="wait">
@@ -176,13 +188,20 @@ const HomePage = ({
                   exit={{ opacity: 0, x: -50 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <div className="achievement-icon">
-                    {achievements[currentAchievement].icon}
+                  <div className="achievement-content">
+                    <h3>{achievements[currentAchievement].title}</h3>
+                    <div className="achievement-details">
+                      <p>{achievements[currentAchievement].description}</p>
+                      <div className="achievement-date">
+                        {achievements[currentAchievement].date}
+                      </div>
+                    </div>
                   </div>
-                  <h3>{achievements[currentAchievement].title}</h3>
-                  <p>{achievements[currentAchievement].description}</p>
-                  <div className="achievement-date">
-                    {achievements[currentAchievement].date}
+                  <div className="achievement-image">
+                    <img 
+                      src={achievements[currentAchievement].image} 
+                      alt={achievements[currentAchievement].title}
+                    />
                   </div>
                 </motion.div>
               </AnimatePresence>
