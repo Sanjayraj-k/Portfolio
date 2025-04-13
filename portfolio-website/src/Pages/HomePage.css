@@ -1,0 +1,210 @@
+.home-page {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  
+  
+  .home-section-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 0;
+    position: relative;
+  }
+  
+  .home-hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    min-height: calc(100vh - 200px);
+  }
+  
+  .home-content {
+    flex: 1;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .home-text h4 {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+  }
+  
+  .home-text h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.2;
+  }
+  
+  .type-animation h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    min-height: 60px;
+  }
+  
+  .home-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  /* Achievements Slider */
+  .achievements-slider {
+    flex: 0 0 400px;
+    position: relative;
+    margin-left: 60px;
+  }
+  
+  .achievement-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .achievement-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+  }
+  
+  .achievement-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  
+  .achievement-card p {
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .achievement-date {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+  }
+  
+  .slider-controls {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .slider-arrow {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .slider-arrow:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+  
+  .arrow {
+    width: 20px;
+    height: 20px;
+    border-left: 2px solid var(--text-secondary);
+    border-bottom: 2px solid var(--text-secondary);
+    transform: rotate(-45deg);
+    margin-top: 10px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .home-hero-content {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-bottom: 60px;
+    }
+    
+    .achievements-slider {
+      flex: 1;
+      width: 100%;
+      margin-left: 0;
+      margin-top: 60px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .home-section-container {
+      padding: 80px 0;
+    }
+    
+    .home-hero-content {
+      padding: 0 20px;
+      min-height: calc(100vh - 160px);
+    }
+    
+    .home-text h1 {
+      font-size: 2.5rem;
+    }
+    
+    .type-animation h3 {
+      font-size: 1.2rem;
+      min-height: 50px;
+    }
+    
+    .home-buttons {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .btn {
+      width: 100%;
+    }
+    
+    .achievement-card {
+      padding: 20px;
+    }
+    
+    .achievement-icon {
+      font-size: 2rem;
+    }
+    
+    .achievement-card h3 {
+      font-size: 1.3rem;
+    }
+  }

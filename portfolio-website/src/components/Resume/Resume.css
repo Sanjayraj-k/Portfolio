@@ -1,0 +1,135 @@
+.resume-section {
+    padding: 100px 0;
+  }
+  
+  .resume-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    margin: 0 auto 50px;
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  
+  .download-btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+  }
+  
+  .resume-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+  
+  .experience-section h3,
+  .education-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  
+  .experience-section h3::after,
+  .education-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+  }
+  
+  .timeline {
+    position: relative;
+    padding-left: 30px;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 2px;
+    background-color: var(--accent-color);
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+  }
+  
+  .timeline-marker {
+    position: absolute;
+    top: 5px;
+    left: -38px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    border: 3px solid var(--secondary-color);
+  }
+  
+  .timeline-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .timeline-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+  
+  .timeline-meta .company {
+    color: var(--accent-color);
+    font-weight: 500;
+  }
+  
+  .timeline-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  
+  .education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .education-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .education-meta {
+    display: flex;
+    gap: 15px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+  
+  .education-meta .institution {
+    color: var(--accent-color);
+    font-weight: 500;
+  }
+  
+  @media (max-width: 992px) {
+    .resume-content {
+      grid-template-columns: 1fr;
+    }
+  }
