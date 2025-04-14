@@ -36,6 +36,8 @@
   height: 350px;
   border-radius: 20px;
   overflow: hidden;
+  /* Added box shadow for extra glowing effect */
+  box-shadow: 0 0 25px rgba(0, 102, 255, 0.6);
 }
 
 .profile-image {
@@ -52,7 +54,8 @@
   left: -10px;
   right: -10px;
   bottom: -10px;
-  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+  /* Changed to blue gradient colors */
+  background: linear-gradient(45deg, #0066ff, #00ccff, #0033cc);
   z-index: 1;
   filter: blur(20px);
   opacity: 0.7;
@@ -72,7 +75,7 @@
   .about-container {
     flex-direction: column;
   }
-  
+    
   .about-image {
     margin-top: 50px;
   }
