@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import emailjs from 'emailjs-com'
 import { FiSend, FiLinkedin, FiGithub, FiTwitter } from 'react-icons/fi'
 import './Contact.css'
 
@@ -23,19 +24,31 @@ const Contact = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData)
-      setIsSubmitting(false)
-      setSubmitMessage('Thank you for your message! I will get back to you soon.')
-      setFormData({ name: '', email: '', message: '' })
-      
-      // Clear message after 5 seconds
-      setTimeout(() => {
-        setSubmitMessage('')
-      }, 5000)
-    }, 1500)
+
+    emailjs.sendForm(
+      'service_qucxjxh', // 🔁 Replace with your EmailJS service ID
+      'template_51xqp0w', // 🔁 Replace with your EmailJS template ID
+      e.target,
+      '9-YdAYjMulRPOM3I3' // 🔁 Replace with your EmailJS public key
+    ).then(
+      (result) => {
+        console.log('Email sent successfully!', result.text)
+        setIsSubmitting(false)
+        setSubmitMessage('✅ Thank you for your message! I will get back to you soon.')
+        setFormData({ name: '', email: '', message: '' })
+        setTimeout(() => {
+          setSubmitMessage('')
+        }, 5000)
+      },
+      (error) => {
+        console.error('Email send error:', error.text)
+        setIsSubmitting(false)
+        setSubmitMessage('❌ Something went wrong. Please try again later.')
+        setTimeout(() => {
+          setSubmitMessage('')
+        }, 5000)
+      }
+    )
   }
 
   return (
@@ -57,7 +70,7 @@ const Contact = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
         >
           Get In Touch
         </motion.h2>
-        
+
         <div className="contact-content">
           <motion.form 
             onSubmit={handleSubmit}
@@ -79,7 +92,7 @@ const Contact = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
                 onMouseLeave={textLeave}
               />
             </div>
-            
+
             <div className="form-group">
               <label htmlFor="email">Email</label>
               <input
@@ -93,7 +106,7 @@ const Contact = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
                 onMouseLeave={textLeave}
               />
             </div>
-            
+
             <div className="form-group">
               <label htmlFor="message">Message</label>
               <textarea
@@ -107,7 +120,7 @@ const Contact = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
                 onMouseLeave={textLeave}
               />
             </div>
-            
+
             <motion.button
               type="submit"
               className="submit-btn"
@@ -119,7 +132,7 @@ const Contact = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
             >
               {isSubmitting ? 'Sending...' : 'Send Message'} <FiSend />
             </motion.button>
-            
+
             {submitMessage && (
               <motion.div 
                 className="submit-message"
@@ -130,7 +143,7 @@ const Contact = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
               </motion.div>
             )}
           </motion.form>
-          
+
           <motion.div 
             className="contact-info"
             initial={{ y: 50, opacity: 0 }}
@@ -143,7 +156,7 @@ const Contact = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
               Feel free to reach out if you're looking for a developer, have a question, 
               or just want to connect.
             </p>
-            
+
             <div className="info-item">
               <span className="info-label">Email:</span>
               <a 
@@ -151,18 +164,18 @@ const Contact = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
                 onMouseEnter={textEnter}
                 onMouseLeave={textLeave}
               >
-                example@example.com
+                Ksanjayias@gmail.com
               </a>
             </div>
-            
+
             <div className="info-item">
               <span className="info-label">Phone:</span>
-              <span>+1 (123) 456-7890</span>
+              <span>+91 9940717141 </span>
             </div>
-            
+
             <div className="social-links">
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/sanjayraj-k/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 onMouseEnter={buttonEnter}
@@ -171,7 +184,7 @@ const Contact = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
                 <FiLinkedin />
               </a>
               <a 
-                href="https://github.com" 
+                href="https://github.com/Sanjayraj-k" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 onMouseEnter={buttonEnter}
@@ -180,7 +193,7 @@ const Contact = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
                 <FiGithub />
               </a>
               <a 
-                href="https://twitter.com" 
+                href="https://x.com/Sanjayraj156" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 onMouseEnter={buttonEnter}

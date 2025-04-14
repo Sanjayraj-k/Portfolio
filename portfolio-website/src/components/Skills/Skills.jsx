@@ -1,20 +1,51 @@
-import { motion } from 'framer-motion'
-import { FaReact, FaNodeJs, FaJs, FaDatabase, FaCss3Alt } from 'react-icons/fa'
-import { SiTypescript, SiGraphql, SiDocker, SiRedux } from 'react-icons/si'
-import './Skills.css'
+import { motion } from 'framer-motion';
+import {
+  FaReact,
+  FaNodeJs,
+  FaJs,
+  FaDatabase,
+  FaCss3Alt,
+  FaPython,
+  FaBootstrap,
+  FaJava,
+} from 'react-icons/fa';
+
+import {
+  SiLangchain,
+  SiDocker,
+  SiTailwindcss,
+  SiJsonwebtokens,
+  SiRazorpay,
+  SiOpenai,
+  SiFlask,
+  SiC,
+  SiOpencv,
+} from 'react-icons/si';
+
+import './Skills.css';
 
 const skills = [
   { name: 'JavaScript', level: 95, icon: <FaJs />, color: '#f0db4f' },
-  { name: 'TypeScript', level: 85, icon: <SiTypescript />, color: '#007acc' },
   { name: 'React', level: 90, icon: <FaReact />, color: '#61dafb' },
   { name: 'Node.js', level: 88, icon: <FaNodeJs />, color: '#68a063' },
   { name: 'Express', level: 85, icon: <FaNodeJs />, color: '#000000' },
   { name: 'MongoDB', level: 80, icon: <FaDatabase />, color: '#4DB33D' },
-  { name: 'GraphQL', level: 75, icon: <SiGraphql />, color: '#e535ab' },
+  { name: 'LangChain', level: 80, icon: <SiLangchain />, color: '#000000' },
+  { name: 'LangGraph', level: 75, icon: <SiLangchain />, color: '#8884d8' },
+  { name: 'Python', level: 85, icon: <FaPython />, color: '#3776ab' },
+  { name: 'Flask', level: 80, icon: <SiFlask />, color: '#000000' },
   { name: 'Docker', level: 70, icon: <SiDocker />, color: '#2496ed' },
-  { name: 'Redux', level: 85, icon: <SiRedux />, color: '#764abc' },
-  { name: 'CSS/Sass', level: 90, icon: <FaCss3Alt />, color: '#2965f1' },
-]
+  { name: 'CSS', level: 90, icon: <FaCss3Alt />, color: '#2965f1' },
+  { name: 'Bootstrap', level: 85, icon: <FaBootstrap />, color: '#7952b3' },
+  { name: 'Tailwind CSS', level: 85, icon: <SiTailwindcss />, color: '#38b2ac' },
+  { name: 'JWT Auth', level: 80, icon: <SiJsonwebtokens />, color: '#000000' },
+  { name: 'Razorpay', level: 75, icon: <SiRazorpay />, color: '#0f66dc' },
+  { name: 'Deep Learning', level: 70, icon: <SiOpenai />, color: '#3333cc' },
+  { name: 'OpenCV', level: 80, icon: <SiOpencv />, color: '#00599C' },
+  { name: 'Machine Learning', level: 75, icon: <SiOpenai />, color: '#c71610' },
+  { name: 'C', level: 80, icon: <SiC />, color: '#00599C' },
+  { name: 'Java', level: 85, icon: <FaJava />, color: '#007396' },
+];
 
 const Skills = ({ textEnter, textLeave }) => {
   return (
@@ -67,7 +98,7 @@ const Skills = ({ textEnter, textLeave }) => {
         </div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;

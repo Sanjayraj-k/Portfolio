@@ -57,10 +57,10 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         </ul>
         
         <div className="navbar-social">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Sanjayraj-k/" target="_blank" rel="noopener noreferrer">
             <FiGithub />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/sanjayraj-k/" target="_blank" rel="noopener noreferrer">
             <FiLinkedin />
           </a>
           <a href="mailto:example@example.com">

@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
 import { FiDownload } from 'react-icons/fi'
 import './Resume.css'
-
+import resume from '../../assets/images/Resume.pdf'
 const experiences = [
   {
     id: 1,
-    role: 'Senior Full Stack Developer',
+    role: ' Full Stack Developer',
     company: 'Tech Innovations Inc.',
     period: '2020 - Present',
     description: 'Led a team of developers to build scalable web applications. Implemented CI/CD pipelines and improved performance by 40%.'
@@ -29,16 +29,17 @@ const experiences = [
 const educations = [
   {
     id: 1,
-    degree: 'Master of Computer Science',
-    institution: 'Tech University',
-    period: '2014 - 2016'
+    degree: 'Higher Secondary School',
+    institution: 'Vidhyaa Vikas Matric Higher Secondary School',
+    period: '2021 - 2023'
   },
   {
     id: 2,
-    degree: 'Bachelor of Software Engineering',
-    institution: 'State University',
-    period: '2010 - 2014'
+    degree: 'B.Tech Artificial Intelligence and Machine Learning',
+    institution: 'Kongu Engineering College',
+    period: '2023 - 2027'
   }
+  
 ]
 
 const Resume = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
@@ -63,7 +64,7 @@ const Resume = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
         </motion.h2>
         
         <motion.a
-          href="/resume.pdf"
+          href={resume}
           download
           className="download-btn"
           onMouseEnter={buttonEnter}

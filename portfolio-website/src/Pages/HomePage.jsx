@@ -11,7 +11,9 @@ import Resume from '../components/Resume/Resume';
 import Contact from '../components/Contact/Contact';
 import SectionWrapper from '../components/SectionWrapper/SectionWrapper';
 import './HomePage.css';
-
+import achievementsimg from '../assets/images/CSI CERTIFICATE 1 price.jpg'; // Replace with actual image path
+import achievementsimg2 from '../assets/images/kgisl coding second prize.png';
+import resume from '../assets/images/Resume.pdf' // Replace with actual image path
 const HomePage = ({ 
   textEnter, 
   textLeave, 
@@ -27,27 +29,22 @@ const HomePage = ({
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   
   const achievements = [
-    {
-      id: 1,
-      title: "Project Completion",
-      description: "Successfully launched a full-stack application with 10k+ users",
-      date: "June 2023",
-      image: "https://th.bing.com/th/id/OIP.pXGBS5JBR3q7gXKHYPjurQHaFj?rs=1&pid=ImgDetMain" // Replace with actual image path
-    },
+      {
+        id: 1,
+        title: "CSD 24 Hour Hackathon 1 Prize",
+        description: "Built an AI Quiz Generator with real-time proctoring and won the CSD 24 Hackathon.",
+        date: "March 2025",
+        image: achievementsimg // Replace with actual image path
+      },
+      
     {
       id: 2,
-      title: "Award Winner",
-      description: "Received Best Developer Award at Tech Conference 2023",
-      date: "March 2023",
-      image: "https://example.com/award-winner.jpg" // Replace with actual image path
+      title: "2 Prize in KGISL Coding Contest",
+      description: "Secured 2nd place in KGISL Coding Contest by solving complex DSA questions.",
+      date: "October 2024",
+      image: achievementsimg2 // Replace with actual image path
     },
-    {
-      id: 3,
-      title: "Community Growth",
-      description: "Built developer community with 500+ active members",
-      date: "January 2023",
-      image: "https://example.com/community-growth.jpg" // Replace with actual image path
-    }
+    
   ];
 
   useEffect(() => {
@@ -145,16 +142,17 @@ const HomePage = ({
                 >
                   Contact Me
                 </motion.a>
-                <motion.a 
-                  href="#projects" 
-                  className="btn secondary"
-                  onMouseEnter={buttonEnter}
-                  onMouseLeave={buttonLeave}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  View Projects
-                </motion.a>
+<motion.a 
+  href={resume} 
+  className="btn secondary"
+  onMouseEnter={buttonEnter}
+  onMouseLeave={buttonLeave}
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  download // This attribute triggers the download
+>
+  Download Resume
+</motion.a>
               </motion.div>
             </div>
 
