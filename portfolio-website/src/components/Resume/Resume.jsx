@@ -1,57 +1,16 @@
 import { motion } from 'framer-motion'
-import { FiDownload } from 'react-icons/fi'
 import './Resume.css'
-import resume from '../../assets/images/Resume.pdf'
-const experiences = [
-  {
-    id: 1,
-    role: ' Full Stack Developer',
-    company: 'Tech Innovations Inc.',
-    period: '2020 - Present',
-    description: 'Led a team of developers to build scalable web applications. Implemented CI/CD pipelines and improved performance by 40%.'
-  },
-  {
-    id: 2,
-    role: 'Full Stack Developer',
-    company: 'Digital Solutions LLC',
-    period: '2018 - 2020',
-    description: 'Developed and maintained multiple client projects. Introduced React which reduced development time by 30%.'
-  },
-  {
-    id: 3,
-    role: 'Junior Web Developer',
-    company: 'Web Masters',
-    period: '2016 - 2018',
-    description: 'Built responsive websites and assisted in backend development. Learned modern JavaScript frameworks.'
-  }
-]
 
-const educations = [
-  {
-    id: 1,
-    degree: 'Higher Secondary School',
-    institution: 'Vidhyaa Vikas Matric Higher Secondary School',
-    period: '2021 - 2023'
-  },
-  {
-    id: 2,
-    degree: 'B.Tech Artificial Intelligence and Machine Learning',
-    institution: 'Kongu Engineering College',
-    period: '2023 - 2027'
-  }
-  
-]
-
-const Resume = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
+const Resume = ({ textEnter, textLeave }) => {
   return (
     <motion.div 
-      className="resume-section"
+      className="stats-section"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true, amount: 0.5 }}
     >
-      <div className="resume-container">
+      <div className="stats-container">
         <motion.h2 
           onMouseEnter={textEnter}
           onMouseLeave={textLeave}
@@ -60,89 +19,65 @@ const Resume = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          My Resume
+          Coding Stats
         </motion.h2>
-        
-        <motion.a
-          href={resume}
-          download
-          className="download-btn"
-          onMouseEnter={buttonEnter}
-          onMouseLeave={buttonLeave}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <FiDownload /> Download Resume
-        </motion.a>
-        
-        <div className="resume-content">
-          <div className="experience-section">
-            <motion.h3 
+
+        <div className="stats-grid">
+          {/* GitHub Stats Section */}
+          <motion.div
+            className="stat-card"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <motion.h3
+              onMouseEnter={textEnter}
+              onMouseLeave={textLeave}
               initial={{ x: -30, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              Experience
+              GitHub Activity
             </motion.h3>
-            
-            <div className="timeline">
-              {experiences.map((exp, index) => (
-                <motion.div 
-                  key={exp.id}
-                  className="timeline-item"
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="timeline-marker"></div>
-                  <div className="timeline-content">
-                    <h4>{exp.role}</h4>
-                    <div className="timeline-meta">
-                      <span className="company">{exp.company}</span>
-                      <span className="period">{exp.period}</span>
-                    </div>
-                    <p>{exp.description}</p>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="streak-container">
+            <a href="https://github.com/Sanjayraj-k">
+                <img 
+                  src="https://streak-stats.demolab.com?user=Sanjayraj-k&theme=nightowl&background=0,000000,441350&fire=ffeb95&ring=ffeb95&sideNums=ffffff&sideLabels=ffffff&dates=c56a90&currStreakNum=ffffff"
+                  alt="GitHub Contribution Stats" 
+                  className="stats-image"
+                />
+              </a>
             </div>
-          </div>
-          
-          <div className="education-section">
-            <motion.h3 
+          </motion.div>
+
+          {/* LeetCode Stats Section */}
+          <motion.div
+            className="stat-card"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <motion.h3
+              onMouseEnter={textEnter}
+              onMouseLeave={textLeave}
               initial={{ x: -30, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.4, delay: 0.5 }}
               viewport={{ once: true }}
             >
-              Education
+              LeetCode Progress
             </motion.h3>
-            
-            <div className="education-list">
-              {educations.map((edu, index) => (
-                <motion.div 
-                  key={edu.id}
-                  className="education-item"
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <h4>{edu.degree}</h4>
-                  <div className="education-meta">
-                    <span className="institution">{edu.institution}</span>
-                    <span className="period">{edu.period}</span>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="leetcode-container">
+              <a href="https://leetcode.com/u/Sanjayrajk/">
+                <img 
+                  src="https://leetcard.jacoblin.cool/Sanjayrajk?theme=dark&font=source_code_pro&ext=heatmap" alt="LeetCode Stats"
+                />
+              </a>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.div>

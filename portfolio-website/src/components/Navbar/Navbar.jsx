@@ -19,7 +19,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
-    { id: 'resume', label: 'Resume' },
+    { id: 'resume', label: 'Status' },
     { id: 'contact', label: 'Contact' },
   ]
 
@@ -32,7 +32,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     >
       <div className="navbar-container">
         <div className="navbar-logo">
-          <span>{"<Portfolio />"}</span>
+          <span>{"Portfolio "}</span>
         </div>
         
         <ul className="navbar-links">
