@@ -1,27 +1,49 @@
-import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
-import { FiGithub, FiLinkedin, FiMail, FiDownload } from 'react-icons/fi'
-import './Navbar.css'
+import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import './Navbar.css';
 
 const Navbar = ({ activeSection, setActiveSection }) => {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleLinkClick = (sectionId) => {
+    setActiveSection(sectionId);
+    setIsMenuOpen(false);
+  };
+
+  const handleEmailClick = (e) => {
+    // Fallback for devices without an email client
+    const canOpenMailto = window.navigator.userAgent.includes('Mobi')
+      ? !!navigator.userAgent.match(/(iPhone|iPad|Android)/) // Check for mobile devices likely to have an email app
+      : !!window.navigator.mimeTypes['x-scheme-handler/mailto']; // Check for desktop email client support
+
+    if (!canOpenMailto) {
+      e.preventDefault(); // Prevent opening a new tab
+      alert(
+        'No email client detected. You can reach me at ksanjayias@gmail.com or use the Contact section below.'
+      );
+      // Optionally scroll to the Contact section
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
     }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  };
 
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
-    { id: 'resume', label: 'Status' },
+    { id: 'resume', label: 'Resume' },
     { id: 'contact', label: 'Contact' },
-  ]
+  ];
 
   return (
     <motion.nav 
@@ -31,17 +53,26 @@ const Navbar = ({ activeSection, setActiveSection }) => {
       transition={{ duration: 0.5 }}
     >
       <div className="navbar-container">
-        <div className="navbar-logo">
-          
+        <div 
+          className={`hamburger ${isMenuOpen ? 'active' : ''}`} 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => e.key === 'Enter' && setIsMenuOpen(!isMenuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        
-        <ul className="navbar-links">
+
+        <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
           {navItems.map((item) => (
             <li key={item.id}>
               <a
                 href={`#${item.id}`}
                 className={activeSection === item.id ? 'active' : ''}
-                onClick={() => setActiveSection(item.id)}
+                onClick={() => handleLinkClick(item.id)}
               >
                 {item.label}
                 {activeSection === item.id && (
@@ -55,8 +86,8 @@ const Navbar = ({ activeSection, setActiveSection }) => {
             </li>
           ))}
         </ul>
-        
-        <div className="navbar-social">
+
+       <div className="navbar-social">
           <a href="https://github.com/Sanjayraj-k/" target="_blank" rel="noopener noreferrer">
             <FiGithub />
           </a>
@@ -69,7 +100,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         </div>
       </div>
     </motion.nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
