@@ -32,7 +32,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     >
       <div className="navbar-container">
         <div className="navbar-logo">
-          <span>{"Portfolio "}</span>
+          
         </div>
         
         <ul className="navbar-links">

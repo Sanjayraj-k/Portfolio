@@ -22,6 +22,7 @@
   margin: 0 auto;
   padding: 0 40px;
   min-height: calc(100vh - 200px);
+  gap: 40px; /* Add gap between content and slider */
 }
 
 .home-content {
@@ -64,12 +65,49 @@
   margin-top: 30px;
 }
 
-/* Achievements Slider - Updated Styles */
+/* Achievements Slider - Fixed Alignment */
 .achievements-slider {
-  flex: 0 0 600px; /* Maintains the size */
+  flex: 0 0 550px; /* Fixed width for consistency */
   position: relative;
-  margin-left: 100px; /* Moves the slider slightly to the right */
-  max-width: 600px;
+  max-width: 550px;
+  min-height: 400px; /* Set minimum height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+}
+
+.slider-controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.slider-arrow {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.slider-arrow:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.slider-arrow svg {
+  width: 20px;
+  height: 20px;
 }
 
 .achievement-card {
@@ -82,9 +120,15 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  height: 100%;
-  gap: 20px;
+  min-height: 350px; /* Changed to min-height for flexibility */
+  gap: 25px;
   width: 100%;
+  position: relative;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .achievement-content {
@@ -92,49 +136,57 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  height: 100%;
 }
 
 .achievement-content h3 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   margin-bottom: 1rem;
   color: #fff;
+  line-height: 1.3;
 }
 
 .achievement-details {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .achievement-details p {
   color: #cbd5e1;
   margin-bottom: 1rem;
   line-height: 1.6;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .achievement-date {
   color: var(--accent-color);
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: auto;
 }
 
 .achievement-image {
-  flex: 0 0 60%;
-  max-height: 400px;
+  flex: 0 0 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .achievement-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain; /* Changed from cover to contain */
   transition: transform 0.3s ease;
+  border-radius: 8px;
 }
 
 .achievement-image:hover img {
   transform: scale(1.05);
 }
-
-/* Removed slider-controls styles since arrows are removed */
 
 .scroll-indicator {
   position: absolute;
@@ -165,6 +217,7 @@
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .btn.primary {
@@ -193,32 +246,45 @@
 @media (max-width: 1200px) {
   .home-hero-content {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding-bottom: 60px;
+    text-align: center;
+    gap: 60px;
   }
   
-  .achievements-slider {
-    flex: 1;
-    width: 100%;
+  .home-content {
+    align-items: center;
     max-width: 100%;
-    margin-left: 0; /* Reset margin on mobile */
-    margin-top: 60px;
+  }
+
+  .achievements-slider {
+    flex: none;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
   }
 
   .achievement-card {
-    margin-left: 50%;
     flex-direction: column;
+    height: auto;
+    min-height: 400px;
     gap: 20px;
   }
 
   .achievement-content {
     order: 2;
+    text-align: center;
+    height: auto;
   }
 
   .achievement-image {
     order: 1;
     width: 100%;
-    max-height: 400px;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px; /* Set minimum height instead of fixed */
   }
 }
 
@@ -230,8 +296,13 @@
   .home-hero-content {
     padding: 0 20px;
     min-height: calc(100vh - 160px);
+    gap: 40px;
   }
   
+  .home-text h4 {
+    font-size: 1rem;
+  }
+
   .home-text h1 {
     font-size: 2.5rem;
   }
@@ -244,29 +315,78 @@
   .home-buttons {
     flex-direction: column;
     width: 100%;
+    gap: 15px;
   }
   
   .btn {
     width: 100%;
     text-align: center;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .achievements-slider {
+    max-width: 100%;
   }
   
   .achievement-card {
     padding: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0 10px;
+    min-height: 350px;
   }
   
   .achievement-content h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .achievement-details p {
+    font-size: 0.95rem;
+  }
+
+  .achievement-date {
+    font-size: 0.9rem;
   }
 
   .achievement-image {
-    max-height: 300px;
+    min-height: 180px; /* Adjusted for mobile */
+  }
+
+  .slider-controls {
+    top: 15px;
+    right: 15px;
+  }
+
+  .slider-arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  .slider-arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .scroll-indicator {
+    bottom: 20px;
+    font-size: 0.8rem;
+  }
+
+  .arrow {
+    width: 15px;
+    height: 15px;
   }
 }
 
 @media (max-width: 480px) {
+  .home-hero-content {
+    padding: 0 15px;
+    gap: 30px;
+  }
+
+  .home-text h4 {
+    font-size: 0.9rem;
+  }
+
   .home-text h1 {
     font-size: 2rem;
   }
@@ -274,13 +394,47 @@
   .type-animation h3 {
     font-size: 1rem;
   }
-  
-  .achievements-slider {
-    margin-top: 40px;
-    margin-left: 50%;
+
+  .achievement-card {
+    padding: 15px;
+    margin: 0 5px;
+    min-height: 300px;
+  }
+
+  .achievement-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .achievement-details p {
+    font-size: 0.85rem;
   }
 
   .achievement-image {
-    max-height: 250px;
+    min-height: 150px; /* Further adjusted for small screens */
+  }
+
+  .slider-controls {
+    top: 10px;
+    right: 10px;
+  }
+
+  .slider-arrow {
+    width: 30px;
+    height: 30px;
+  }
+
+  .slider-arrow svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .scroll-indicator {
+    bottom: 15px;
+    font-size: 0.7rem;
+  }
+
+  .arrow {
+    width: 12px;
+    height: 12px;
   }
 }

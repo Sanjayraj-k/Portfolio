@@ -1,15 +1,31 @@
 .section-wrapper {
-    position: relative;
-    width: 100%;
-  }
-  
-  .section-wrapper.dark {
-    background-color: var(--primary-color);
-  }
-  
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Ensure the section takes up space */
+  overflow: visible; /* Prevent clipping of content */
+}
+
+.section-wrapper.dark {
+  background-color: var(--primary-color, #0a0a23); /* Fallback to match portfolio theme */
+}
+
+.section-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
   .section-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
   }
+}
+
+@media (max-width: 480px) {
+  .section-container {
+    padding: 0 10px;
+  }
+}

@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
-import './Resume.css'
+import { motion } from 'framer-motion';
+import './Resume.css';
 
 const Resume = ({ textEnter, textLeave }) => {
   return (
@@ -41,7 +41,7 @@ const Resume = ({ textEnter, textLeave }) => {
             >
               GitHub Activity
             </motion.h3>
-            <div className="streak-container">
+           <div className="streak-container">
             <a href="https://github.com/Sanjayraj-k">
             <img align="center" src="https://github-readme-stats.vercel.app/api?username=Sanjayraj-k&count_private=true&show_icons=true&theme=nightowl&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff&rank_icon=github&hide=prs,issues,contribs&show=reviews,prs_merged,prs_merged_percentage" alt="GitHub Stats" />
               </a>
@@ -77,7 +77,7 @@ const Resume = ({ textEnter, textLeave }) => {
         </div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default Resume
+export default Resume;

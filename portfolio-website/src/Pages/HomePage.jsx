@@ -11,9 +11,10 @@ import Resume from '../components/Resume/Resume';
 import Contact from '../components/Contact/Contact';
 import SectionWrapper from '../components/SectionWrapper/SectionWrapper';
 import './HomePage.css';
-import achievementsimg from '../assets/images/CSI CERTIFICATE 1 price.jpg'; // Replace with actual image path
+import achievementsimg from '../assets/images/CSI CERTIFICATE 1 price.jpg';
 import achievementsimg2 from '../assets/images/kgisl coding second prize.png';
-import resume from '../assets/images/Resume.pdf' // Replace with actual image path
+import resume from '../assets/images/Resume.pdf';
+
 const HomePage = ({ 
   textEnter, 
   textLeave, 
@@ -29,22 +30,20 @@ const HomePage = ({
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   
   const achievements = [
-      {
-        id: 1,
-        title: "CSD 24 Hour Hackathon 1 Prize",
-        description: "Built an AI Quiz Generator with real-time proctoring and won the CSD 24 Hackathon.",
-        date: "March 2025",
-        image: achievementsimg // Replace with actual image path
-      },
-      
+    {
+      id: 1,
+      title: "CSD 24 Hour Hackathon 1st Prize",
+      description: "Built an AI Quiz Generator with real-time proctoring and won the CSD 24 Hackathon.",
+      date: "March 2025",
+      image: achievementsimg
+    },
     {
       id: 2,
-      title: "2 Prize in KGISL Coding Contest",
+      title: "2nd Prize in KGISL Coding Contest",
       description: "Secured 2nd place in KGISL Coding Contest by solving complex DSA questions.",
       date: "October 2024",
-      image: achievementsimg2 // Replace with actual image path
+      image: achievementsimg2
     },
-    
   ];
 
   useEffect(() => {
@@ -59,11 +58,10 @@ const HomePage = ({
   useEffect(() => {
     const interval = setInterval(() => {
       nextAchievement();
-    }, 10000); // Change slide every 4 seconds
+    }, 10000); // Change slide every 10 seconds
 
-    // Clear interval on component unmount
     return () => clearInterval(interval);
-  }, [currentAchievement]); // Dependency on currentAchievement to restart interval if needed
+  }, [currentAchievement]);
 
   const nextAchievement = () => {
     setCurrentAchievement((prev) => (prev + 1) % achievements.length);
@@ -79,9 +77,6 @@ const HomePage = ({
 
   return (
     <div className="home-page">
-      {/* Starry Background */}
-      
-
       {/* Home Section */}
       <SectionWrapper id="home" onVisible={() => handleSectionChange('home')}>
         <motion.div 
@@ -142,40 +137,23 @@ const HomePage = ({
                 >
                   Contact Me
                 </motion.a>
-<motion.a 
-  href={resume} 
-  className="btn secondary"
-  onMouseEnter={buttonEnter}
-  onMouseLeave={buttonLeave}
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-  download // This attribute triggers the download
->
-  Download Resume
-</motion.a>
+                <motion.a 
+                  href={resume} 
+                  className="btn secondary"
+                  onMouseEnter={buttonEnter}
+                  onMouseLeave={buttonLeave}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  download
+                >
+                  Download Resume
+                </motion.a>
               </motion.div>
             </div>
 
             {/* Achievements Slider */}
-            <div className="achievements-slider " style={{"margin-left":"50px"}}>
-              <div className="slider-controls">
-                <motion.button 
-                  onClick={prevAchievement} 
-                  className="slider-arrow"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <FiChevronLeft />
-                </motion.button>
-                <motion.button 
-                  onClick={nextAchievement} 
-                  className="slider-arrow"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <FiChevronRight />
-                </motion.button>
-              </div>
+            <div className="achievements-slider">
+              
               
               <AnimatePresence mode="wait">
                 <motion.div
