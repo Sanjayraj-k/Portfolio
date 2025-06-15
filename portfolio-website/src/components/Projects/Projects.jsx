@@ -3,7 +3,15 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import './Projects.css';
 import ticketvideo from '../../assets/video/chennai museum.mp4';
 import quiz from '../../assets/video/Ai Quiz.mp4'
-import event from '../../assets/video/Event Management.mp4' // Import your video file here
+import event from '../../assets/video/Event Management.mp4' 
+import fitness from '../../assets/video/fitness.mp4';
+import fitnessapp from '../../assets/video/fitnessapp.mp4'; 
+import classbot from '../../assets/video/chatbot.mp4';
+import mlmodel from '../../assets/video/mlmodels.mp4'; // Import a demo video here if available
+// Import chatbot.mp4 as classbotVideo
+// Replace with the correct import for 'video (1).mp4' 
+ // Import your video file here
+// Import your video file here
 const projects = [
   {
     id: 1,
@@ -16,14 +24,15 @@ const projects = [
     
   },
   {
-    id: 2,
-    title: 'AI Quiz Generator with Proctoring System',
-    description: 'An AI-powered quiz platform that generates questions from PDFs and auto-creates Google Forms for quizzes. Includes proctoring features like face tracking, tab switch detection, and speech monitoring. Built using React.js, Flask, MongoDB, and LLaMA 3 via LangChain.',
-    tags: ['React.js', 'Flask', 'MongoDB', 'LangChain', 'LangGraph','LLaMA 3', 'Google Forms', 'Computer Vision'],
-    video: quiz, // Replace with actual video URL
-    github: 'https://github.com/jeyachandranj/Google-Form-AI.git', // Replace with your actual GitHub repo link
-    live: 'https://drive.google.com/drive/folders/1OOWh5aCHHF4S2SPqfTUkguF_ebY8Figg', // Replace with your live link
-  },    
+  id: 2,
+  title: 'AI Quiz Generator with Proctor System',
+  description: 'An AI quiz app with dashboards for teachers and students. Teachers upload PDFs to auto-generate quizzes, and students take tests with proctoring features like face tracking and tab switch alerts. Built with React.js, Flask, and MongoDB using LangChain and LLaMA 4.',
+  tags: ['Teacher Dashboard', 'Student Dashboard', 'React.js', 'Flask', 'MongoDB', 'LangChain', 'LLaMA 3', 'Proctoring'],
+  video: quiz, // Replace with actual video URL
+  github: 'https://github.com/Sanjayraj-k/AI_Proctor_Quiz.git',
+  live: 'https://drive.google.com/drive/folders/1OOWh5aCHHF4S2SPqfTUkguF_ebY8Figg'
+}
+    ,
   {
     id: 3,
     title: 'Event Management System',
@@ -33,17 +42,55 @@ const projects = [
     github: 'https://github.com/Sanjayraj-k/EVENT-MANAGEMENT', // Replace with your actual GitHub repo link
     live: 'https://master-event-mangagement.netlify.app/', // Replace with your live link
   },
+  {
+  id: 4,
+  title: 'Fitness Tracker Dashboard',
+  description: 'A fitness tracking web app that monitors workouts, calories, and progress over time. Users can log daily activities, view performance charts, and stay motivated. Built with React.js and Node.js, with data stored in MongoDB.',
+  tags: ['React.js', 'Node.js', 'MongoDB', 'Fitness', 'Dashboard'],
+  video: fitness, // Replace 'video' with the actual import name for your video file
+  github: 'https://github.com/Sanjayraj-k/Fitness_tracker.git', // Replace with your actual repo link
+  live: 'https://sanjayfitness.vercel.app/' // Replace with your actual live link
+},
+{
+  id: 5,
+  title: 'Fitness Tracker App',
+  description: 'A full-stack fitness tracking app that allows users to log workouts, track calories, and monitor progress through dynamic dashboards. Features include daily activity logging, progress charts, goal setting, and motivational summaries. Built using React Native for the frontend, Node.js for backend APIs, and MongoDB for storing user data securely.',
+  tags: ['React Native', 'Node.js', 'MongoDB', 'Fitness', 'Workout Tracker', 'Dashboard'],
+  video: fitnessapp, // Replace with the correct import for 'video (1).mp4'
+  github: 'https://github.com/Sanjayraj-k/Fitness_app.git', // Replace with actual repo link
+  live: 'https://drive.google.com/drive/folders/1OOWh5aCHHF4S2SPqfTUkguF_ebY8Figg' // Replace with actual live link
+},
+{
+  id: 6,
+  title: 'AI ClassBot Assistant',
+  description: 'ClassBot is an AI-powered assistant built with Streamlit and LLaMA 3 via LangChain, designed to manage student records using natural language commands. It connects to an SQL database (like SQLite or MySQL) to perform real-time queries such as finding the top-scoring student whose name starts with "S" or deleting students without any recorded marks. Just type your request in plain English and let ClassBot handle the SQL logic behind the scenes.',
+  tags: ['Streamlit', 'SQL', 'LangChain', 'LLaMA 3', 'AI Chatbot', 'EdTech', 'NLP'],
+  video: classbot, // Import chatbot.mp4 as classbotVideo
+  github: 'https://github.com/Sanjayraj-k/classbot.git',
+  live: 'https://drive.google.com/drive/folders/1OOWh5aCHHF4S2SPqfTUkguF_ebY8Figg'
+},
+{
+  id: 7,
+  title: 'ML Streamlit App – Sentiment Analysis & Sleep Prediction',
+  description: 'This Streamlit-powered web app combines two powerful machine learning features in one interface. The Sentiment Analysis module uses Logistic Regression with NLTK preprocessing, enhanced via GridSearchCV for optimal accuracy. The Sleep Time Prediction module applies a Random Forest Regressor to estimate ideal sleep duration based on user data. This project demonstrates my ability to blend data preprocessing, ML modeling, and user-friendly deployment — all in a clean, interactive UI.',
+  tags: ['Streamlit', 'Logistic Regression', 'Random Forest', 'NLTK', 'GridSearchCV', 'Machine Learning', 'Sentiment Analysis', 'Regression'],
+  video: mlmodel, // Import a demo video here if available
+  github: 'https://github.com/Sanjayraj-k/MlModels.git',
+  live: 'https://mlmodels2.streamlit.app/'
+}
+
+
 
 ];
 
-const Projects = ({ projectEnter, projectLeave, buttonEnter, buttonLeave }) => {
+const Projects = () => {
   return (
     <motion.div
       className="projects-section"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      viewport={{ once: true, amount: 0.5 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       <div className="projects-container">
         <motion.h2
@@ -64,37 +111,21 @@ const Projects = ({ projectEnter, projectLeave, buttonEnter, buttonLeave }) => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10 }}
-              onMouseEnter={projectEnter}
-              onMouseLeave={projectLeave}
             >
               <div className="project-image">
                 <video
                   src={project.video}
                   alt={project.title}
-                  autoPlay
-                  loop
                   muted
                   playsInline
+                  ref={(el) => el && el.play().catch(() => console.log('Autoplay failed'))}
                 />
                 <div className="project-overlay">
                   <div className="project-links">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onMouseEnter={buttonEnter}
-                      onMouseLeave={buttonLeave}
-                    >
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <FiGithub />
                     </a>
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onMouseEnter={buttonEnter}
-                      onMouseLeave={buttonLeave}
-                    >
+                    <a href={project.live} target="_blank" rel="noopener noreferrer">
                       <FiExternalLink />
                     </a>
                   </div>

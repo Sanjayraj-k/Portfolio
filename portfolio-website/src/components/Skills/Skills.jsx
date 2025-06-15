@@ -2,11 +2,21 @@ import React from 'react';
 import './Skills.css';
 
 const Skills = ({ textEnter, textLeave }) => {
+  const languages=[
+    { name: 'Python', color: '#3776AB', icon: '🐍' },
+    { name: 'Java', color: '#007396', icon: 'J' },
+    { name: 'Langchain', color: '#00599C', icon: '🔗' },
+    { name: 'LangGraph', color: '#00599C', icon: '🔗' },
+    { name: 'Machine Learning', color: '#00599C', icon: 'ML' },
+    { name: 'Deep Learning', color: '#00599C', icon: 'DL' },
+    { name: 'Computer Vision', color: '#00599C', icon: 'CV' },
+    
+  ]
   const frontendTech = [
     { name: 'HTML', color: '#E34F26', icon: '🌐' },
     { name: 'CSS', color: '#1572B6', icon: '🎨' },
     { name: 'JavaScript', color: '#F7DF1E', icon: 'JS' },
-    { name: 'React', color: '#61DAFB', icon: '⚛️' },
+    { name: 'React', color: '#61DAFB', icon: '⚛' },
     { name: 'Bootstrap', color: '#7952B3', icon: 'B' }
   ];
 
@@ -22,8 +32,6 @@ const Skills = ({ textEnter, textLeave }) => {
     { name: 'Github', color: '#181717', icon: '🐙' },
     { name: 'VS Code', color: '#007ACC', icon: '💻' },
     { name: 'Git', color: '#F05032', icon: '📊' },
-    { name: 'BackStage', color: '#36BCF7', icon: '🎭' },
-    { name: 'SonarCloud', color: '#F3702A', icon: '☁️' }
   ];
 
   const TechCard = ({ tech }) => (
@@ -62,6 +70,16 @@ const Skills = ({ textEnter, textLeave }) => {
           </h3>
           <div className="tech-grid">
             {backendTech.map((tech, index) => (
+              <TechCard key={index} tech={tech} />
+            ))}
+          </div>
+        </section>
+        <section className="tech-section">
+          <h3 className="section-title">
+            Languages& <span>Ai</span>
+          </h3>
+          <div className="tech-grid">
+            {languages.map((tech, index) => (
               <TechCard key={index} tech={tech} />
             ))}
           </div>

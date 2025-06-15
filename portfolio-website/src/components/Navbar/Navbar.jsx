@@ -63,7 +63,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
           <a href="https://www.linkedin.com/in/sanjayraj-k/" target="_blank" rel="noopener noreferrer">
             <FiLinkedin />
           </a>
-          <a href="mailto:example@example.com">
+          <a href="mailto:ksanjayias@gmail.com">
             <FiMail />
           </a>
         </div>

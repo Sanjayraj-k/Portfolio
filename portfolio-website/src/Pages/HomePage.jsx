@@ -13,6 +13,7 @@ import SectionWrapper from '../components/SectionWrapper/SectionWrapper';
 import './HomePage.css';
 import achievementsimg from '../assets/images/CSI CERTIFICATE 1 price.jpg';
 import achievementsimg2 from '../assets/images/kgisl coding second prize.png';
+import achievementsimg3 from '../assets/images/CSI.jpg'; // Replace with the actual image variable or path
 import resume from '../assets/images/Resume.pdf';
 
 const HomePage = ({ 
@@ -30,21 +31,29 @@ const HomePage = ({
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   
   const achievements = [
-    {
-      id: 1,
-      title: "CSD 24 Hour Hackathon 1st Prize",
-      description: "Built an AI Quiz Generator with real-time proctoring and won the CSD 24 Hackathon.",
-      date: "March 2025",
-      image: achievementsimg
-    },
-    {
-      id: 2,
-      title: "2nd Prize in KGISL Coding Contest",
-      description: "Secured 2nd place in KGISL Coding Contest by solving complex DSA questions.",
-      date: "October 2024",
-      image: achievementsimg2
-    },
-  ];
+  {
+    id: 1,
+    title: "CSD 24 Hour Hackathon 1st Prize",
+    description: "Built an AI Quiz Generator with real-time proctoring and won the CSD 24 Hackathon.",
+    date: "March 2025",
+    image: achievementsimg
+  },
+  {
+    id: 2,
+    title: "2nd Prize in KGISL Coding Contest",
+    description: "Secured 2nd place in KGISL Coding Contest by solving complex DSA questions.",
+    date: "October 2024",
+    image: achievementsimg2
+  },
+  {
+    id: 3,
+    title: "1st Prize in CSI Project Expo",
+    description: "Developed a Ticket Booking Chatbot for Chennai Museum using LLM and integrated Razorpay for seamless payment processing.",
+    date: "April 2025",
+    image: achievementsimg3 // Replace with the actual image variable or path
+  }
+];
+
 
   useEffect(() => {
     const handleMouseMove = (e) => {
