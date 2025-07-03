@@ -9,6 +9,8 @@ import fitness from '../../assets/video/fitness.mp4';
 import fitnessapp from '../../assets/video/fitnessapp.mp4';
 import classbot from '../../assets/video/chatbot.mp4';
 import mlmodel from '../../assets/video/mlmodels.mp4';
+import tagmeVideo from '../../assets/video/tageme.mp4';
+import interviewVideo from '../../assets/video/mockinterview.mp4';
 
 // Import unique images for each project
 import ticketImage from '../../assets/images/chennai.png'; // Replace with actual image
@@ -18,7 +20,9 @@ import fitnessImage from '../../assets/images/fitnesstracker.png'; // Replace wi
 import fitnessAppImage from '../../assets/images/fitnessapp.jpg'; // Replace with actual image
 import classbotImage from '../../assets/images/classbot.png'; // Replace with actual image
 import mlmodelImage from '../../assets/images/mlmodels.png'; // Replace with actual image
-
+import interviewImage from '../../assets/images/mockinterview.png';
+import tagemeImage from '../../assets/images/tagme.png';
+ // Replace with actual image
 const projects = [
   {
     id: 1,
@@ -42,6 +46,16 @@ const projects = [
   },
   {
     id: 3,
+    title: 'AI-Powered Mock Interview Platform',
+    description: 'A full-stack AI-driven mock interview system with LLM-based dynamic question generation, aptitude and coding rounds, and real-time proctoring (face detection, audio monitoring, tab switch tracking). Built using React.js, Flask, and MongoDB with Docker for code execution.',
+    tags: ['React.js', 'Flask', 'MongoDB', 'LLM', 'OpenCV', 'Docker'],
+    video: interviewVideo,
+    image: interviewImage, // Unique image for this project
+    github: 'https://github.com/Sanjayraj-k/AIMockInterviewPlatform.git',
+    live: 'https://drive.google.com/drive/folders/your_mockinterview_demo_link',
+  },
+  {
+    id: 4,
     title: 'Event Management System',
     description: 'A full-stack platform for managing college and tech events. Organizers can create and manage events, track registrations, and view analytics. Built with React and Express, secured with JWT authentication, and uses MongoDb for data storage.',
     tags: ['React', 'Express', 'MongoDb', 'JWT', 'Event Management'],
@@ -51,7 +65,17 @@ const projects = [
     live: 'https://master-event-mangagement.netlify.app/',
   },
   {
-    id: 4,
+    id: 5,
+    title: 'TagMeNow — AI Face Matching & Tagging System',
+    description: 'An intelligent web app that automatically matches and tags faces in group photos using an MSTN deep learning model. Built with React.js, Tailwind CSS, and MongoDB, it offers fast, accurate tagging and a seamless user experience for organizing memories.',
+    tags: ['React.js', 'Tailwind CSS', 'MongoDB', 'MSTN', 'Deep Learning'],
+    video: tagmeVideo,
+    image: tagemeImage, // Unique image for this project
+    github: 'https://github.com/Sanjayraj-k/TagMeNow.git',
+    live: 'https://drive.google.com/drive/folders/your_tagmenow_demo_link',
+  },
+  {
+    id: 6,
     title: 'Fitness Tracker Dashboard',
     description: 'A fitness tracking web app that monitors workouts, calories, and progress over time. Users can log daily activities, view performance charts, and stay motivated. Built with React.js and Node.js, with data stored in MongoDB.',
     tags: ['React.js', 'Node.js', 'MongoDB', 'Fitness', 'Dashboard'],
@@ -61,7 +85,7 @@ const projects = [
     live: 'https://sanjayfitness.vercel.app/',
   },
   {
-    id: 5,
+    id: 7,
     title: 'Fitness Tracker App',
     description: 'A full-stack fitness tracking app that allows users to log workouts, track calories, and monitor progress through dynamic dashboards. Features include daily activity logging, progress charts, goal setting, and motivational summaries. Built using React Native for the frontend, Node.js for backend APIs, and MongoDB for storing user data securely.',
     tags: ['React Native', 'Node.js', 'MongoDB', 'Fitness', 'Workout Tracker', 'Dashboard'],
@@ -71,7 +95,7 @@ const projects = [
     live: 'https://drive.google.com/drive/folders/1OOWh5aCHHF4S2SPqfTUkguF_ebY8Figg',
   },
   {
-    id: 6,
+    id: 8,
     title: 'AI ClassBot Assistant',
     description: 'ClassBot is an AI-powered assistant built with Streamlit and LLaMA 3 via LangChain, designed to manage student records using natural language commands. It connects to an SQL database (like SQLite or MySQL) to perform real-time queries such as finding the top-scoring student whose name starts with "S" or deleting students without any recorded marks. Just type your request in plain English and let ClassBot handle the SQL logic behind the scenes.',
     tags: ['Streamlit', 'SQL', 'LangChain', 'LLaMA 3', 'AI Chatbot', 'EdTech', 'NLP'],
@@ -81,7 +105,7 @@ const projects = [
     live: 'https://drive.google.com/drive/folders/1OOWh5aCHHF4S2SPqfTUkguF_ebY8Figg',
   },
   {
-    id: 7,
+    id: 9,
     title: 'ML Streamlit App – Sentiment Analysis & Sleep Prediction',
     description: 'This Streamlit-powered web app combines two powerful machine learning features in one interface. The Sentiment Analysis module uses Logistic Regression with NLTK preprocessing, enhanced via GridSearchCV for optimal accuracy. The Sleep Time Prediction module applies a Random Forest Regressor to estimate ideal sleep duration based on user data. This project demonstrates my ability to blend data preprocessing, ML modeling, and user-friendly deployment — all in a clean, interactive UI.',
     tags: ['Streamlit', 'Logistic Regression', 'Random Forest', 'NLTK', 'GridSearchCV', 'Machine Learning', 'Sentiment Analysis', 'Regression'],
