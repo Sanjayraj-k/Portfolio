@@ -51,8 +51,8 @@ const projects = [
     tags: ['React.js', 'Flask', 'MongoDB', 'LLM', 'OpenCV', 'Docker'],
     video: interviewVideo,
     image: interviewImage, // Unique image for this project
-    github: 'https://github.com/Sanjayraj-k/AIMockInterviewPlatform.git',
-    live: 'https://drive.google.com/drive/folders/your_mockinterview_demo_link',
+    github: 'https://github.com/Sanjayraj-k/Mock_Interview',
+    live: 'https://mock-intervue.vercel.app/',
   },
   {
     id: 4,
@@ -71,8 +71,8 @@ const projects = [
     tags: ['React.js', 'Tailwind CSS', 'MongoDB', 'MSTN', 'Deep Learning'],
     video: tagmeVideo,
     image: tagemeImage, // Unique image for this project
-    github: 'https://github.com/Sanjayraj-k/TagMeNow.git',
-    live: 'https://drive.google.com/drive/folders/your_tagmenow_demo_link',
+    github: 'https://github.com/Sanjayraj-k/Face_Recognition.git',
+    live: 'https://drive.google.com/drive/folders/1OOWh5aCHHF4S2SPqfTUkguF_ebY8Figg',
   },
   {
     id: 6,

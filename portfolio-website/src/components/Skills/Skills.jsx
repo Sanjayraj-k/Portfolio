@@ -51,7 +51,7 @@ const Skills = ({ textEnter, textLeave }) => {
           onMouseEnter={textEnter} 
           onMouseLeave={textLeave}
         >
-          Skill<span className="highlight">ss</span>
+          Skill<span className="highlight">s</span>
         </h2>
         <section className="tech-section">
           <h3 className="section-title">
