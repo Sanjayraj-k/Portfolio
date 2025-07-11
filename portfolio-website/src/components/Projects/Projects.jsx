@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './Projects.css';
 
 // Import unique images for each project
@@ -98,43 +98,9 @@ const projects = [
   },
 ];
 
-const ProjectCard = ({ project, index }) => {
-  const [isAnimated, setIsAnimated] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsAnimated(true);
-    }, 200 + index * 150); // Stagger animation for each card
-
-    return () => clearTimeout(timer);
-  }, [index]);
-
+const ProjectCard = ({ project }) => {
   return (
-    <motion.div
-      className="project-card"
-      initial={{
-        x: 0,
-        y: 0,
-        rotate: index === 0 ? 0 : index === 1 ? -5 : 5,
-        scale: 1,
-        zIndex: projects.length - index,
-      }}
-      animate={{
-        x: isAnimated ? 0 : 0,
-        y: isAnimated ? 0 : -(index * 20),
-        rotate: isAnimated ? 0 : index === 0 ? 0 : index === 1 ? -5 : 5,
-        scale: isAnimated ? 1 : index === 0 ? 1 : 0.95,
-        zIndex: isAnimated ? 1 : projects.length - index,
-      }}
-      transition={{
-        duration: 0.8,
-        ease: "easeOut",
-        delay: 0,
-      }}
-      style={{
-        transformOrigin: 'center center',
-      }}
-    >
+    <div className="project-card">
       <div className="project-image">
         <img src={project.image} alt={project.title} loading="lazy" />
         <div className="project-overlay">
@@ -157,7 +123,7 @@ const ProjectCard = ({ project, index }) => {
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -188,8 +154,8 @@ const Projects = () => {
         </motion.h2>
 
         <div className="projects-grid">
-          {projects.slice(0, visibleProjects).map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
+          {projects.slice(0, visibleProjects).map((project) => (
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
 
