@@ -160,19 +160,36 @@ const HomePage = ({
               </motion.div>
             </div>
 
-            {/* Achievements Slider */}
-            <div className="achievements-slider">
-              
+              <div className="achievements-slider">
+              <div className="slider-controls">
+                <motion.button 
+                  onClick={prevAchievement} 
+                  className="slider-arrow"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <FiChevronLeft />
+                </motion.button>
+                <motion.button 
+                  onClick={nextAchievement} 
+                  className="slider-arrow"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <FiChevronRight />
+                </motion.button>
+              </div>
               
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentAchievement}
                   className="achievement-card"
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.5 }}
+                  initial={{ opacity: 0, scale: 0.7, rotateY: -90 }}
+                  animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                  exit={{ opacity: 0, scale: 0.7, rotateY: 90 }}
+                  transition={{ duration: 0.9, type: 'spring', stiffness: 60, damping: 18 }}
                 >
+                  <div className="achievement-particles"></div>
                   <div className="achievement-content">
                     <h3>{achievements[currentAchievement].title}</h3>
                     <div className="achievement-details">
@@ -204,7 +221,6 @@ const HomePage = ({
         </motion.div>
       </SectionWrapper>
 
-      {/* About Section */}
       <SectionWrapper id="about" dark onVisible={() => handleSectionChange('about')}>
         <About 
           textEnter={textEnter} 
@@ -212,7 +228,6 @@ const HomePage = ({
         />
       </SectionWrapper>
 
-      {/* Skills Section */}
       <SectionWrapper id="skills" dark onVisible={() => handleSectionChange('skills')}>
         <Skills 
           textEnter={textEnter} 
@@ -220,7 +235,6 @@ const HomePage = ({
         />
       </SectionWrapper>
 
-      {/* Projects Section */}
       <SectionWrapper id="projects" onVisible={() => handleSectionChange('projects')}>
         <Projects 
           projectEnter={projectEnter}
@@ -230,7 +244,6 @@ const HomePage = ({
         />
       </SectionWrapper>
 
-      {/* Resume Section */}
       <SectionWrapper id="resume" dark onVisible={() => handleSectionChange('resume')}>
         <Resume 
           textEnter={textEnter} 
@@ -240,7 +253,6 @@ const HomePage = ({
         />
       </SectionWrapper>
 
-      {/* Contact Section */}
       <SectionWrapper id="contact" onVisible={() => handleSectionChange('contact')}>
         <Contact 
           textEnter={textEnter} 

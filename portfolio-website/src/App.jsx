@@ -3,7 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import HomePage from './Pages/HomePage';
 import Navbar from './components/Navbar/Navbar';
 import StarBackground from './components/StarBackground';
-import './LoadingAnimation.css'; // Create this new CSS file
+import './LoadingAnimation.css';
+import about from './assets/images/profile.png'; // Assuming this is the path to your profile image
+// Create this new CSS file
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -32,20 +34,24 @@ function App() {
             transition={{ duration: 0.8 }}
           >
             <div className="loading-container">
-              {/* Animated gradient circle */}
+              {/* Animated profile image loader */}
               <motion.div
                 className="gradient-circle"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 180, 360],
-                }}
-                transition={{
-                  duration: 2,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                  repeatType: "loop"
-                }}
-              />
+                style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              >
+                <motion.img
+                  src={about}
+                  alt="Profile"
+                  className="loader-profile-img"
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 2.9,
+                    ease: "linear"
+                  }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
+                />
+              </motion.div>
               
               {/* Typing animation text */}
               <motion.div
@@ -109,3 +115,4 @@ function App() {
 }
 
 export default App;
+
