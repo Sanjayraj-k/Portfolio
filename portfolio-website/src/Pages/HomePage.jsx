@@ -244,7 +244,7 @@ const HomePage = ({
         />
       </SectionWrapper>
 
-      <SectionWrapper id="resume" dark onVisible={() => handleSectionChange('resume')}>
+      <SectionWrapper id="stats" dark onVisible={() => handleSectionChange('resume')}>
         <Resume 
           textEnter={textEnter} 
           textLeave={textLeave}

@@ -50,6 +50,13 @@ const Resume = ({ textEnter, textLeave }) => {
                 />
               </a>
             </div>
+            <div className="streak-container">
+            <img
+            className="stats-image"
+            src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Sanjayraj-k&theme=radical"
+            alt="GitHub Stats"
+          />
+            </div>
           </motion.div>
 
           {/* LeetCode Stats Section */}
