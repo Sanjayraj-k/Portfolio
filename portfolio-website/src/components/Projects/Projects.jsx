@@ -96,6 +96,9 @@ const projects = [
     github: 'https://github.com/Sanjayraj-k/MlModels.git',
     live: 'https://mlmodels2.streamlit.app/',
   },
+  
+  
+
 ];
 
 const ProjectCard = ({ project }) => {
