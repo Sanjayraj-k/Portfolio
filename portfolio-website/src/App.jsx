@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="app">
       <StarBackground />
-      
+
       <AnimatePresence>
         {isLoading ? (
           <motion.div
@@ -52,7 +52,7 @@ function App() {
                   style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
                 />
               </motion.div>
-              
+
               {/* Typing animation text */}
               <motion.div
                 className="loading-text"
@@ -75,13 +75,13 @@ function App() {
                   Loading Portfolio...
                 </motion.div>
               </motion.div>
-              
+
               {/* Progress bar */}
-              <motion.div 
+              <motion.div
                 className="progress-container"
                 initial={{ width: 0 }}
                 animate={{ width: "80%" }}
-                transition={{ 
+                transition={{
                   duration: 2.5,
                   ease: "easeInOut"
                 }}
@@ -90,7 +90,7 @@ function App() {
                   className="progress-bar"
                   initial={{ width: "0%" }}
                   animate={{ width: "100%" }}
-                  transition={{ 
+                  transition={{
                     duration: 2.5,
                     ease: "easeInOut"
                   }}
@@ -100,11 +100,11 @@ function App() {
           </motion.div>
         ) : (
           <>
-            <Navbar 
-              activeSection={activeSection} 
-              setActiveSection={setActiveSection} 
+            <Navbar
+              activeSection={activeSection}
+              setActiveSection={setActiveSection}
             />
-            <HomePage 
+            <HomePage
               setActiveSection={setActiveSection}
             />
           </>
@@ -115,4 +115,3 @@ function App() {
 }
 
 export default App;
-

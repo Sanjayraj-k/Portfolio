@@ -15,11 +15,13 @@ import achievementsimg from '../assets/images/CSI CERTIFICATE 1 price.jpg';
 import achievementsimg2 from '../assets/images/kgisl coding second prize.png';
 import achievementsimg3 from '../assets/images/CSI.jpg'; // Replace with the actual image variable or path
 import resume from '../assets/images/Resume.pdf';
-
-const HomePage = ({ 
-  textEnter, 
-  textLeave, 
-  buttonEnter, 
+import exodia from '../assets/images/exodia.jpg';
+import ai from '../assets/images/ai.jpg';
+import gen from '../assets/images/gen ai.jpg';
+const HomePage = ({
+  textEnter,
+  textLeave,
+  buttonEnter,
   buttonLeave,
   projectEnter,
   projectLeave,
@@ -29,30 +31,60 @@ const HomePage = ({
   const [currentAchievement, setCurrentAchievement] = useState(0);
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
-  
+
   const achievements = [
-  {
-    id: 1,
-    title: "CSD 24 Hour Hackathon 1st Prize",
-    description: "Built an AI Quiz Generator with real-time proctoring and won the CSD 24 Hackathon.",
-    date: "March 2025",
-    image: achievementsimg
-  },
-  {
-    id: 2,
-    title: "2nd Prize in KGISL Coding Contest",
-    description: "Secured 2nd place in KGISL Coding Contest by solving complex DSA questions.",
-    date: "October 2024",
-    image: achievementsimg2
-  },
-  {
-    id: 3,
-    title: "1st Prize in CSI Project Expo",
-    description: "Developed a Ticket Booking Chatbot for Chennai Museum using LLM and integrated Razorpay for seamless payment processing.",
-    date: "April 2025",
-    image: achievementsimg3 // Replace with the actual image variable or path
-  }
-];
+    {
+      id: 4,
+      title: "1st Prize in GEN AI Cognitive Hackathon",
+      description: "Won first prize for the StudyMate project, an AI-powered intelligent study assistant.",
+      date: "September 2025",
+      image: gen
+    },
+
+    {
+      id: 1,
+      title: "CSD 24 Hour Hackathon 1st Prize",
+      description: "Built an AI Quiz Generator with real-time proctoring and won the CSD 24 Hackathon.",
+      date: "March 2025",
+      image: achievementsimg
+    },
+    {
+      id: 2,
+      title: "2nd Prize in KGISL Coding Contest",
+      description: "Secured 2nd place in KGISL Coding Contest by solving complex DSA questions.",
+      date: "October 2024",
+      image: achievementsimg2
+    },
+    {
+      id: 3,
+      title: "1st Prize in CSI Project Expo",
+      description: "Developed a Ticket Booking Chatbot for Chennai Museum using LLM and integrated Razorpay for seamless payment processing.",
+      date: "April 2025",
+      image: achievementsimg3 // Replace with the actual image variable or path
+    },
+    {
+      id: 5,
+      title: "3rd Prize in KPR Tech Auro 2.0 Project Expo",
+      description: "Secured third place for an innovative AI solution showcased at the project expo.",
+      date: "September 2025",
+      image: gen
+    },
+    {
+      id: 6,
+      title: "1st Prize in Exodica Hackathon",
+      description: "Developed an efficient AI-based Face Album Matching system and secured first place.",
+      date: "2025",
+      image: exodia
+    },
+    {
+      id: 7,
+      title: "1st Prize in Newells2K25 AI Mock Interview Event",
+      description: "Recognized for an LLM-powered AI mock interview automation project organized by the AI department.",
+      date: "October 2025",
+      image: ai
+    }
+
+  ];
 
 
   useEffect(() => {
@@ -88,7 +120,7 @@ const HomePage = ({
     <div className="home-page">
       {/* Home Section */}
       <SectionWrapper id="home" onVisible={() => handleSectionChange('home')}>
-        <motion.div 
+        <motion.div
           className="home-section-container"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -103,7 +135,7 @@ const HomePage = ({
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <h4>Hello, I'm</h4>
-                <h1 
+                <h1
                   onMouseEnter={textEnter}
                   onMouseLeave={textLeave}
                 >
@@ -136,8 +168,8 @@ const HomePage = ({
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <motion.a 
-                  href="#contact" 
+                <motion.a
+                  href="#contact"
                   className="btn primary"
                   onMouseEnter={buttonEnter}
                   onMouseLeave={buttonLeave}
@@ -146,8 +178,8 @@ const HomePage = ({
                 >
                   Contact Me
                 </motion.a>
-                <motion.a 
-                  href={resume} 
+                <motion.a
+                  href={resume}
                   className="btn secondary"
                   onMouseEnter={buttonEnter}
                   onMouseLeave={buttonLeave}
@@ -160,18 +192,18 @@ const HomePage = ({
               </motion.div>
             </div>
 
-              <div className="achievements-slider">
+            <div className="achievements-slider">
               <div className="slider-controls">
-                <motion.button 
-                  onClick={prevAchievement} 
+                <motion.button
+                  onClick={prevAchievement}
                   className="slider-arrow"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
                   <FiChevronLeft />
                 </motion.button>
-                <motion.button 
-                  onClick={nextAchievement} 
+                <motion.button
+                  onClick={nextAchievement}
                   className="slider-arrow"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -179,7 +211,7 @@ const HomePage = ({
                   <FiChevronRight />
                 </motion.button>
               </div>
-              
+
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentAchievement}
@@ -200,8 +232,8 @@ const HomePage = ({
                     </div>
                   </div>
                   <div className="achievement-image">
-                    <img 
-                      src={achievements[currentAchievement].image} 
+                    <img
+                      src={achievements[currentAchievement].image}
                       alt={achievements[currentAchievement].title}
                     />
                   </div>
@@ -210,7 +242,7 @@ const HomePage = ({
             </div>
           </div>
 
-          <motion.div 
+          <motion.div
             className="scroll-indicator"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
@@ -222,21 +254,21 @@ const HomePage = ({
       </SectionWrapper>
 
       <SectionWrapper id="about" dark onVisible={() => handleSectionChange('about')}>
-        <About 
-          textEnter={textEnter} 
+        <About
+          textEnter={textEnter}
           textLeave={textLeave}
         />
       </SectionWrapper>
 
       <SectionWrapper id="skills" dark onVisible={() => handleSectionChange('skills')}>
-        <Skills 
-          textEnter={textEnter} 
+        <Skills
+          textEnter={textEnter}
           textLeave={textLeave}
         />
       </SectionWrapper>
 
       <SectionWrapper id="projects" onVisible={() => handleSectionChange('projects')}>
-        <Projects 
+        <Projects
           projectEnter={projectEnter}
           projectLeave={projectLeave}
           buttonEnter={buttonEnter}
@@ -245,8 +277,8 @@ const HomePage = ({
       </SectionWrapper>
 
       <SectionWrapper id="stats" dark onVisible={() => handleSectionChange('resume')}>
-        <Resume 
-          textEnter={textEnter} 
+        <Resume
+          textEnter={textEnter}
           textLeave={textLeave}
           buttonEnter={buttonEnter}
           buttonLeave={buttonLeave}
@@ -254,8 +286,8 @@ const HomePage = ({
       </SectionWrapper>
 
       <SectionWrapper id="contact" onVisible={() => handleSectionChange('contact')}>
-        <Contact 
-          textEnter={textEnter} 
+        <Contact
+          textEnter={textEnter}
           textLeave={textLeave}
           buttonEnter={buttonEnter}
           buttonLeave={buttonLeave}

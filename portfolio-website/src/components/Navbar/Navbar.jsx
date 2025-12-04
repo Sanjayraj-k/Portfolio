@@ -46,15 +46,15 @@ const Navbar = ({ activeSection, setActiveSection }) => {
   ];
 
   return (
-    <motion.nav 
+    <motion.nav
       className={`navbar ${scrolled ? 'scrolled' : ''}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.1 }}
     >
       <div className="navbar-container">
-        <div 
-          className={`hamburger ${isMenuOpen ? 'active' : ''}`} 
+        <div
+          className={`hamburger ${isMenuOpen ? 'active' : ''}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           role="button"
@@ -75,19 +75,12 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                 onClick={() => handleLinkClick(item.id)}
               >
                 {item.label}
-                {activeSection === item.id && (
-                  <motion.span 
-                    className="underline"
-                    layoutId="underline"
-                    transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
               </a>
             </li>
           ))}
         </ul>
 
-       <div className="navbar-social">
+        <div className="navbar-social">
           <a href="https://github.com/Sanjayraj-k/" target="_blank" rel="noopener noreferrer">
             <FiGithub />
           </a>
