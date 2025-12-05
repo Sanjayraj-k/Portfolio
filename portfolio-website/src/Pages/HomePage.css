@@ -64,7 +64,7 @@
 }
 
 /* =========================================
-   Button Styles - NEW (Matches Image)
+   Button Styles (Matches Screenshot)
    ========================================= */
 
 .home-buttons {
@@ -76,7 +76,6 @@
 .btn {
   padding: 14px 32px;
   border-radius: 50px;
-  /* High radius for pill shape */
   font-size: 1.05rem;
   font-weight: 600;
   text-decoration: none;
@@ -116,7 +115,6 @@
   box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2);
 }
 
-
 /* =========================================
    Achievements Slider
    ========================================= */
@@ -124,7 +122,7 @@
 .achievements-slider {
   flex: 0 0 650px;
   max-width: 650px;
-  /* Margin-left pushes the box to the right side on desktop */
+  /* Desktop: Push to right */
   margin-left: 60px;
   margin-right: 0;
   position: relative;
@@ -180,7 +178,6 @@
   transform: translateY(-5px);
 }
 
-/* WIDER IMAGE STYLE */
 .achievement-image {
   flex: 0 0 52%;
   height: 200px;
@@ -244,7 +241,7 @@
   flex-shrink: 0;
 }
 
-/* EXTERNAL ARROWS */
+/* EXTERNAL ARROWS (Desktop) */
 .slider-arrow {
   position: absolute;
   top: 50%;
@@ -323,8 +320,8 @@
     width: 100%;
     max-width: 600px;
     flex: none;
-    /* Reset margins for centering on tablet/mobile */
     margin: 0 auto;
+    /* Center on tablets */
   }
 }
 
@@ -358,7 +355,6 @@
     gap: 16px;
   }
 
-  /* Full width image on mobile */
   .achievement-image {
     flex: none;
     width: 100%;
@@ -373,21 +369,8 @@
     align-items: center;
   }
 
-  /* Move arrows to edges for mobile */
+  /* HIDE SLIDER ARROWS ON MOBILE */
   .slider-arrow {
-    width: 36px;
-    height: 36px;
-    font-size: 1.2rem;
-    background: rgba(20, 20, 30, 0.8);
-  }
-
-  .slider-arrow-left {
-    left: -15px;
-    z-index: 30;
-  }
-
-  .slider-arrow-right {
-    right: -15px;
-    z-index: 30;
+    display: none !important;
   }
 }
