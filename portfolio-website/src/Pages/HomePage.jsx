@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
-import { Canvas } from '@react-three/fiber';
-import { Stars, OrbitControls } from '@react-three/drei';
-import { FiAward, FiCode, FiUsers, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { FiAward, FiChevronLeft, FiChevronRight, FiCalendar, FiTrendingUp, FiBookOpen, FiLayers } from 'react-icons/fi';
 import About from '../components/About/About';
 import Skills from '../components/Skills/Skills';
 import Projects from '../components/Projects/Projects';
@@ -11,13 +9,16 @@ import Resume from '../components/Resume/Resume';
 import Contact from '../components/Contact/Contact';
 import SectionWrapper from '../components/SectionWrapper/SectionWrapper';
 import './HomePage.css';
+
+// Images
 import achievementsimg from '../assets/images/CSI CERTIFICATE 1 price.jpg';
 import achievementsimg2 from '../assets/images/kgisl coding second prize.png';
-import achievementsimg3 from '../assets/images/CSI.jpg'; // Replace with the actual image variable or path
+import achievementsimg3 from '../assets/images/CSI.jpg';
 import resume from '../assets/images/Resume.pdf';
 import exodia from '../assets/images/exodia.jpg';
 import ai from '../assets/images/ai.jpg';
 import gen from '../assets/images/gen ai.jpg';
+
 const HomePage = ({
   textEnter,
   textLeave,
@@ -30,62 +31,72 @@ const HomePage = ({
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [currentAchievement, setCurrentAchievement] = useState(0);
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
 
   const achievements = [
     {
       id: 4,
-      title: "1st Prize in GEN AI Cognitive Hackathon",
-      description: "Won first prize for the StudyMate project, an AI-powered intelligent study assistant.",
+      title: "GEN AI Cognitive Hackathon",
+      prize: "1st Prize",
+      project: "StudyMate - AI Study Assistant",
+      college: "PSG College of Technology",
       date: "September 2025",
       image: gen
     },
-
     {
       id: 1,
-      title: "CSD 24 Hour Hackathon 1st Prize",
-      description: "Built an AI Quiz Generator with real-time proctoring and won the CSD 24 Hackathon.",
+      title: "CSD 24 Hour Hackathon",
+      prize: "1st Prize",
+      project: "AI Quiz Generator",
+      college: "PSG College of Technology",
       date: "March 2025",
       image: achievementsimg
     },
     {
       id: 2,
-      title: "2nd Prize in KGISL Coding Contest",
-      description: "Secured 2nd place in KGISL Coding Contest by solving complex DSA questions.",
+      title: "KGISL Coding Contest",
+      prize: "2nd Prize",
+      project: "Complex DSA Problem Solving",
+      college: "KGISL Institute",
       date: "October 2024",
       image: achievementsimg2
     },
     {
       id: 3,
-      title: "1st Prize in CSI Project Expo",
-      description: "Developed a Ticket Booking Chatbot for Chennai Museum using LLM and integrated Razorpay for seamless payment processing.",
+      title: "CSI Project Expo",
+      prize: "1st Prize",
+      project: "Museum Ticket Chatbot",
+      college: "PSG College of Technology",
       date: "April 2025",
-      image: achievementsimg3 // Replace with the actual image variable or path
+      image: achievementsimg3
     },
     {
       id: 5,
-      title: "3rd Prize in KPR Tech Auro 2.0 Project Expo",
-      description: "Secured third place for an innovative AI solution showcased at the project expo.",
+      title: "KPR Tech Auro 2.0",
+      prize: "3rd Prize",
+      project: "Innovative AI Solution",
+      college: "KPR Institute",
       date: "September 2025",
       image: gen
     },
     {
       id: 6,
-      title: "1st Prize in Exodica Hackathon",
-      description: "Developed an efficient AI-based Face Album Matching system and secured first place.",
+      title: "Exodica Hackathon",
+      prize: "1st Prize",
+      project: "Face Album Matching",
+      college: "PSG College of Technology",
       date: "2025",
       image: exodia
     },
     {
       id: 7,
-      title: "1st Prize in Newells2K25 AI Mock Interview Event",
-      description: "Recognized for an LLM-powered AI mock interview automation project organized by the AI department.",
+      title: "Newells2K25",
+      prize: "1st Prize",
+      project: "AI Mock Interviewer",
+      college: "PSG College of Technology",
       date: "October 2025",
       image: ai
     }
-
   ];
-
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -99,7 +110,7 @@ const HomePage = ({
   useEffect(() => {
     const interval = setInterval(() => {
       nextAchievement();
-    }, 10000); // Change slide every 10 seconds
+    }, 10000);
 
     return () => clearInterval(interval);
   }, [currentAchievement]);
@@ -192,53 +203,69 @@ const HomePage = ({
               </motion.div>
             </div>
 
+            {/* Achievement Slider Section */}
             <div className="achievements-slider">
-              <div className="slider-controls">
-                <motion.button
+              <h2 className="achievements-heading">
+                <FiAward className="heading-icon" />
+                Achievements
+              </h2>
+
+              <div className="slider-wrapper">
+                {/* Left Arrow (Outside Card) */}
+                <button
                   onClick={prevAchievement}
-                  className="slider-arrow"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
+                  className="slider-arrow slider-arrow-left"
                 >
                   <FiChevronLeft />
-                </motion.button>
-                <motion.button
-                  onClick={nextAchievement}
-                  className="slider-arrow"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <FiChevronRight />
-                </motion.button>
-              </div>
+                </button>
 
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentAchievement}
-                  className="achievement-card"
-                  initial={{ opacity: 0, scale: 0.7, rotateY: -90 }}
-                  animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-                  exit={{ opacity: 0, scale: 0.7, rotateY: 90 }}
-                  transition={{ duration: 0.9, type: 'spring', stiffness: 60, damping: 18 }}
-                >
-                  <div className="achievement-particles"></div>
-                  <div className="achievement-content">
-                    <h3>{achievements[currentAchievement].title}</h3>
-                    <div className="achievement-details">
-                      <p>{achievements[currentAchievement].description}</p>
-                      <div className="achievement-date">
-                        {achievements[currentAchievement].date}
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentAchievement}
+                    className="achievement-card"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                  >
+                    <div className="achievement-image">
+                      <img
+                        src={achievements[currentAchievement].image}
+                        alt={achievements[currentAchievement].title}
+                      />
+                    </div>
+                    <div className="achievement-content">
+                      <h3>{achievements[currentAchievement].title}</h3>
+                      <div className="achievement-details">
+                        <div className="achievement-info">
+                          <FiTrendingUp className="info-icon" />
+                          <span>{achievements[currentAchievement].prize}</span>
+                        </div>
+                        <div className="achievement-info">
+                          <FiLayers className="info-icon" />
+                          <span>{achievements[currentAchievement].project}</span>
+                        </div>
+                        <div className="achievement-info">
+                          <FiBookOpen className="info-icon" />
+                          <span>{achievements[currentAchievement].college}</span>
+                        </div>
+                        <div className="achievement-info">
+                          <FiCalendar className="info-icon" />
+                          <span>{achievements[currentAchievement].date}</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="achievement-image">
-                    <img
-                      src={achievements[currentAchievement].image}
-                      alt={achievements[currentAchievement].title}
-                    />
-                  </div>
-                </motion.div>
-              </AnimatePresence>
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Right Arrow (Outside Card) */}
+                <button
+                  onClick={nextAchievement}
+                  className="slider-arrow slider-arrow-right"
+                >
+                  <FiChevronRight />
+                </button>
+              </div>
             </div>
           </div>
 
@@ -254,17 +281,11 @@ const HomePage = ({
       </SectionWrapper>
 
       <SectionWrapper id="about" dark onVisible={() => handleSectionChange('about')}>
-        <About
-          textEnter={textEnter}
-          textLeave={textLeave}
-        />
+        <About textEnter={textEnter} textLeave={textLeave} />
       </SectionWrapper>
 
       <SectionWrapper id="skills" dark onVisible={() => handleSectionChange('skills')}>
-        <Skills
-          textEnter={textEnter}
-          textLeave={textLeave}
-        />
+        <Skills textEnter={textEnter} textLeave={textLeave} />
       </SectionWrapper>
 
       <SectionWrapper id="projects" onVisible={() => handleSectionChange('projects')}>
