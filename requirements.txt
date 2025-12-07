@@ -1,0 +1,12 @@
+flask
+flask-cors
+gunicorn
+python-dotenv
+langchain
+langchain-core
+langchain-openai
+langchain-groq
+langchain-pinecone
+pinecone-client
+langgraph
+requests
