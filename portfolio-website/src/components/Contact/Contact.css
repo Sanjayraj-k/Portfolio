@@ -9,9 +9,14 @@
 }
 
 .contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 50px;
+  align-items: stretch;
+}
+
+.contact-content>form,
+.contact-content>.contact-info {
+  flex: 1;
 }
 
 form {
@@ -85,24 +90,46 @@ form {
 }
 
 .contact-info {
-  padding: 30px;
+  padding: 25px;
   background-color: var(--card-bg);
   border-radius: var(--border-radius);
+  margin-left: 20px;
+}
+
+.contact-animation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.contact-lottie {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
 }
 
 .contact-info h3 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .contact-info p {
   color: var(--text-secondary);
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   line-height: 1.6;
+  text-align: justify;
+}
+
+.contact-details-row {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 15px;
+  justify-content: center;
 }
 
 .info-item {
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .info-label {
@@ -115,7 +142,8 @@ form {
 .social-links {
   display: flex;
   gap: 15px;
-  margin-top: 30px;
+  margin-top: 20px;
+  justify-content: center;
 }
 
 .social-links a {
@@ -138,7 +166,7 @@ form {
 /* Improved Responsive Styles */
 @media (max-width: 992px) {
   .contact-content {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 30px;
   }
 

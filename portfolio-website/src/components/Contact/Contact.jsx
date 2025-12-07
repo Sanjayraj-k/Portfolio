@@ -2,6 +2,8 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import emailjs from 'emailjs-com'
 import { FiSend, FiLinkedin, FiGithub, FiTwitter } from 'react-icons/fi'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
+import contactAnimation from '../../assets/animations/contact us.lottie?url'
 import './Contact.css'
 
 const Contact = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
@@ -52,7 +54,7 @@ const Contact = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
   }
 
   return (
-    <motion.div 
+    <motion.div
       className="contact-section"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -60,7 +62,7 @@ const Contact = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
       viewport={{ once: true, amount: 0.5 }}
     >
       <div className="contact-container">
-        <motion.h2 
+        <motion.h2
           onMouseEnter={textEnter}
           onMouseLeave={textLeave}
           initial={{ x: -50, opacity: 0 }}
@@ -72,7 +74,7 @@ const Contact = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
         </motion.h2>
 
         <div className="contact-content">
-          <motion.form 
+          <motion.form
             onSubmit={handleSubmit}
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -134,7 +136,7 @@ const Contact = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
             </motion.button>
 
             {submitMessage && (
-              <motion.div 
+              <motion.div
                 className="submit-message"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -144,57 +146,67 @@ const Contact = ({ textEnter, textLeave, buttonEnter, buttonLeave }) => {
             )}
           </motion.form>
 
-          <motion.div 
+          <motion.div
             className="contact-info"
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
+            <div className="contact-animation">
+              <DotLottieReact
+                src={contactAnimation}
+                loop
+                autoplay
+                className="contact-lottie"
+              />
+            </div>
             <h3>Contact Information</h3>
             <p>
-              Feel free to reach out if you're looking for a developer, have a question, 
+              Feel free to reach out if you're looking for a developer, have a question,
               or just want to connect.
             </p>
 
-            <div className="info-item">
-              <span className="info-label">Email:</span>
-              <a 
-                href="mailto:ksanjayias@gmail.com"
-                onMouseEnter={textEnter}
-                onMouseLeave={textLeave}
-              >
-                Ksanjayias@gmail.com
-              </a>
-            </div>
+            <div className="contact-details-row">
+              <div className="info-item">
+                <span className="info-label">Email:</span>
+                <a
+                  href="mailto:ksanjayias@gmail.com"
+                  onMouseEnter={textEnter}
+                  onMouseLeave={textLeave}
+                >
+                  Ksanjayias@gmail.com
+                </a>
+              </div>
 
-            <div className="info-item">
-              <span className="info-label">Phone:</span>
-              <span>+91 9940717141 </span>
+              <div className="info-item">
+                <span className="info-label">Phone:</span>
+                <span>+91 9940717141</span>
+              </div>
             </div>
 
             <div className="social-links">
-              <a 
-                href="https://www.linkedin.com/in/sanjayraj-k/" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/in/sanjayraj-k/"
+                target="_blank"
                 rel="noopener noreferrer"
                 onMouseEnter={buttonEnter}
                 onMouseLeave={buttonLeave}
               >
                 <FiLinkedin />
               </a>
-              <a 
-                href="https://github.com/Sanjayraj-k" 
-                target="_blank" 
+              <a
+                href="https://github.com/Sanjayraj-k"
+                target="_blank"
                 rel="noopener noreferrer"
                 onMouseEnter={buttonEnter}
                 onMouseLeave={buttonLeave}
               >
                 <FiGithub />
               </a>
-              <a 
-                href="https://x.com/Sanjayraj156" 
-                target="_blank" 
+              <a
+                href="https://x.com/Sanjayraj156"
+                target="_blank"
                 rel="noopener noreferrer"
                 onMouseEnter={buttonEnter}
                 onMouseLeave={buttonLeave}
