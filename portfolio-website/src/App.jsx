@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import HomePage from './Pages/HomePage';
 import Navbar from './components/Navbar/Navbar';
 import StarBackground from './components/StarBackground';
+import Chatbot from './components/Chatbot/Chatbot';
 import './LoadingAnimation.css';
 import about from './assets/images/profile.png'; // Assuming this is the path to your profile image
 // Create this new CSS file
@@ -107,6 +108,7 @@ function App() {
             <HomePage
               setActiveSection={setActiveSection}
             />
+            <Chatbot />
           </>
         )}
       </AnimatePresence>

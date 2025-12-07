@@ -1,0 +1,195 @@
+Portfolio Content - Sanjay K
+
+1. Hero Section
+Hi, I'm Sanjay K - a Full Stack & GenAI Developer.
+I love building real-world AI products and full-stack applications that solve practical problems.
+I'm currently pursuing B.Tech in Artificial Intelligence and Machine Learning at Kongu Engineering College 
+
+2. About Me
+I'm a full stack enthusiast and Generative AI developer with strong problem-solving skills. I enjoy turning ideas into working products - from backend APIs to clean, responsive UIs. I've worked on multiple AI + full�stack projects such as museum ticket booking chatbots, AI�powered quiz generators, and intelligent automation tools.
+I actively practice data structures and algorithms on LeetCode using Python and Java (over 200 problems solved) to sharpen my logical thinking.
+
+3. Skills
+- Programming: Python, Java, JavaScript
+- Frontend: React.js, HTML, CSS
+- Backend: Flask, Node.js (basic), REST APIs
+- Databases: MongoDB, SQLite
+- AI / ML: LLMs (Llama 3, Gemini, Groq), LangChain, RAG systems, basic ML models
+- Tools & Platforms: Git/GitHub, Vercel, Razorpay integration, Kaggle
+- Other: Problem solving, system design basics, prompt engineering
+
+4. Major Projects
+
+4.1 Museum Ticket Booking Chatbot
+- Description: An AI-powered assistant and ticket booking bot for a museum.
+- Tech Stack: React.js (frontend), Flask (backend), LLaMA 3.2 (8B) via Groq, Razorpay for payments, Mong
+- Features:
+-Chatbot that answers visitor questions about the museum.
+-Ticket booking workflow with seat/slot selection.
+-Online payment using Razorpay, with ticket sent to user via email.
+- Location-based queries using OpenRouteService.
+- Outcome: Demonstrates full-stack development, API integration, payment gateway handling, and practical use of LLMs in a real application scenario.
+
+4.2 AI-Powered Quiz Generating System
+- Description: A system that generates quizzes automatically from lecture materials and monitors test integri
+- Tech Stack: Flask backend, React frontend, Groq LLaMA model, LangChain, MongoDB, Computer Vision.
+- Features:
+- Upload PDFs / DOCX / TXT and automatically generate multiple-choice questions.
+- Uses a RAG pipeline to retrieve relevant content and generate accurate questions.
+- Creates Google Forms automatically and fetches responses for evaluation.
+- Proctoring features such as tab-switch detection, face tracking, and speech monitoring.
+- Outcome: Automates quiz creation for teachers and improves exam integrity using AI and computer vision.
+
+4.3 Intelligent Multi-Agent Ecosystem for Task Automation
+- Description: A multi-agent system where each LLM agent handles a specific dataset or task, and a final aggregator model combines their outputs.
+- Ideas / Features:
+
+-Each agent specializes in one table or relation.
+- Aggregator model merges partial answers into a final, accurate result.
+-User feedback loop to continuously improve accuracy.
+- Outcome: Research-oriented project that explores coordination between multiple LLM agents for complex queries.
+
+4.4 LLM-based SQL Chatbot for Database Operations
+- Description: A chatbot that converts natural language into SQL queries to perform search, insert, and delete operations on an SQLite database.
+- Tech Stack: Google Generative AI model, Flask backend, HTML/CSS/JavaScript frontend, SQLite.
+- Features:
+- Converts user questions into SQL automatically.
+- Supports operations like searching records, adding new entries, and deleting rows.
+- Includes a "Book Ticket" flow that checks availability in SQLite and confirms booking.
+- Outcome: Shows the practical use of LLMs for text-to-SQL and end-to-end workflow automation.
+
+4.5 Streamlit ML App - Sentiment Analysis & Sleep Time Prediction
+- Description: A Streamlit web app combining two ML features in one interface.
+- Tech Stack: Python, Streamlit, Logistic Regression, Random Forest Regressor, NLTK, GridSearchCV.
+- Features:
+-Sentiment Analysis module with NLTK preprocessing and Logistic Regression, tuned with GridSearchCV for better accuracy.
+-Sleep Time Prediction using Random Forest Regressor based on user input features.
+-Clean, simple UI for interacting with both models.
+- Outcome: Demonstrates end-to-end ML pipeline building, model tuning, and deployment in a user-friendly interface.
+
+5. Achievements (Sample Format for Portfolio)
+- GenAI Cognitive Hackathon - 1st Prize for "Study Mate" project.
+- KPR Tech Auro 2.0 Project Expo - 3rd Prize (September 2025).
+- Exodica Event - 1st Prize in hackathon for face album matching project.
+- AI Department Event "#Newells2K25" - Built a mock interview AI project (October).
+
+6. Problem Solving & Competitive Programming
+- Solved 200+ problems on LeetCode in Python and Java.
+- Focus areas: arrays, strings, dynamic programming, recursion, graphs, and optimization.
+- Goal: Strengthen foundations for coding interviews at product-based companies.
+
+7. Career Goals
+- Aim: AI Engineer / Full Stack + AI Engineer roles at product-based companies.
+- Interests: LLMs, RAG systems, multi-agent AI, automation, and scalable backend systems.
+- Short-term goal: Crack top-tier company placements starting January next year.
+
+8. Contact
+- Location: India
+- Portfolio: sanjayk.vercel.app
+- GitHub:https://github.com/Sanjayraj-k
+- LinkedIn: https://www.linkedin.com/in/sanjayraj-k/
+-LeetCode:
+- Open to: Internships, full-time roles, and AI-focused freelance projects.
+SANJAY K
+ksanjayias@gmail.com | Tiruppur | 9940717141 |Sanjayk
+
+
+Career Objective
+Eager to grow professionally in an innovative, future-focused environment while contributing to impactful projects.
+
+Education
+B.TECH IN AI & MACHINE LEARNING KONGU ENGINEERING COLLEGE CGPA: 8.35 / 10	| 2023-2027
+HSC
+VIDHYAA VIKAS MATRIC HR SEC SCHOOL
+Grad. May 2023 | Per : 90.5
+SSLC
+VIDHYAA VIKAS MATRIC HR SEC SCHOOL
+Grad. May 2021 | Per : ALL PASS
+
+Areas of Interest
+Full Stack
+Machine Learning GenAI
+
+Skill
+Languages	 Java, Python Web Tech	HTML, CSS, React Database	 SQL, MongoDB
+Frameworks Pandas, NumPy, Keras, Tf
+Tools	Git, PowerBI,vercel
+AI	Langchain,Langgraph
+Acheivements
+2025 - 1st Hackovate25 Hackathon
+2024 - 2nd IBM-GenAi Hackathon
+2025 - 1st Project Presentation KPR
+
+Links
+GithHub : sanjayk Leetcode : sanjayrajk LinkedIn : sanjayk
+Leadership
+Executive Member->Cloud user club(2024-25) Executive Member->CSI (2023-24)
+
+Experience
+Aerele Technologies Intern| Software Developer
+Aug 2025 - Oct 2025 | Tiruppur | Intern
+Developed an AI-powered quiz generator using Groq's LLaMA 4 for dynamic question generation, integrated with Google Forms for secure assessments.
+Implemented proctoring features including tab-switch detection, face tracking, and speech monitoring, with a full-stack architecture enabling teachers to assign quizzes, track performance, and manage results
+Project
+TICKET BOOKING CHATBOT FOR MUSEUM| Git| AI
+Developed a multi-platform AI chatbot for museum ticket booking using LangChain and LLaMA, enabling intelligent query handling and seamless interactions via WhatsApp and Web.
+Integrated Razorpay, OpenRouteService, and MongoDB for secure payments, route insights, and real-time booking management with automated confirmations and validation.
+Tech Stack: Python, React, Flask, Chroma, MongoDB, OpenRouteService, Razorpay,LLaMA
+
+AI-Powered Mock Interview Platform | Git | AI
+Built an AI-powered virtual interview simulator using LangChain and LLaMA for adaptive question generation, personalized feedback, and real-time performance evaluation.
+Integrated speech-to-text, face detection, and proctoring features to ensure interview authenticity, along with ATS-based resume checking, community discussions, and company insights extraction.
+Tech Stack: React.js, Flask, MongoDB, LangChain, LLaMA, OpenAI Whisper, OpenCV, Python,Chroma
+AI-Powered Photo Management Platform | Git | AI
+ Built a full-stack facial recognition system using MTCNN and FaceNet (InceptionResNetV1) achieving 98% matching accuracy, with CLIP model integration for text-to-speech capabilities.
+Integrated Google Drive API with OAuth 2.0 for cross-folder photo search and tagging, and developed a Chrome Extension for instant face-based photo retrieval, improving search speed by 60%.
+Tech Stack: React.js, Flask, MongoDB, MTCNN, FaceNet (InceptionResNetV1), CLIP, Google Drive API, OAuth 2.0, Python, Chrome Extension
+
+EVENT MANAGEMENT | Git | FULL STCAK
+Developed a multi-role event management application for KEC College where students can view events, make Razorpay payments, and download certificates, while club members create events and book halls.
+Implemented role-based approvals and management, allowing club heads to approve events and admins to manage hall availability and oversee all event operations.
+Tech Stack: MongoDB, Express.js, React.js, Node.js (MERN), Razorpay API, JWT
+
+Achievements - Sanjay K
+
+1) GEN AI Cognitive Hackathon
+   - Prize: 1st Prize
+   - Project: StudyMate - AI Study Assistant
+   - College: PSG College of Technology
+   - Date: September 2025
+
+2) CSD 24 Hour Hackathon
+   - Prize: 1st Prize
+   - Project: AI Quiz Generator
+   - College: PSG College of Technology
+   - Date: March 2025
+
+3) KGISL Coding Contest
+   - Prize: 2nd Prize
+   - Project: Complex DSA Problem Solving
+   - College: KGISL Institute
+   - Date: October 2024
+
+4) CSI Project Expo
+   - Prize: 1st Prize
+   - Project: Museum Ticket Chatbot
+   - College: PSG College of Technology
+   - Date: April 2025
+
+5) KPR Tech Auro 2.0
+   - Prize: 3rd Prize
+   - Project: Innovative AI Solution
+   - College: KPR Institute
+   - Date: September 2025
+
+6) Exodica Hackathon
+   - Prize: 1st Prize
+   - Project: Face Album Matching
+   - College: PSG College of Technology
+   - Date: 2025
+
+7) Newells2K25
+   - Prize: 1st Prize
+   - Project: AI Mock Interviewer
+   - College: PSG College of Technology
+   - Date: October 2025
