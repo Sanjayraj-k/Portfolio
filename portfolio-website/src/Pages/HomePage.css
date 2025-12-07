@@ -276,6 +276,37 @@
   right: -60px;
 }
 
+/* Slider Dots */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(139, 92, 246, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.slider-dot:hover {
+  background: rgba(139, 92, 246, 0.6);
+  transform: scale(1.1);
+}
+
+.slider-dot.active {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  width: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
 /* =========================================
    General & Responsive
    ========================================= */

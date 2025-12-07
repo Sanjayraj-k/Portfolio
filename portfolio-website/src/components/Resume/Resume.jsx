@@ -3,7 +3,7 @@ import './Resume.css';
 
 const Resume = ({ textEnter, textLeave }) => {
   return (
-    <motion.div 
+    <motion.div
       className="stats-section"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -11,7 +11,7 @@ const Resume = ({ textEnter, textLeave }) => {
       viewport={{ once: true, amount: 0.5 }}
     >
       <div className="stats-container">
-        <motion.h2 
+        <motion.h2
           onMouseEnter={textEnter}
           onMouseLeave={textLeave}
           initial={{ x: -50, opacity: 0 }}
@@ -51,11 +51,11 @@ const Resume = ({ textEnter, textLeave }) => {
               </a>
             </div>
             <div className="streak-container">
-            <img
-            className="stats-image"
-            src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Sanjayraj-k&theme=radical"
-            alt="GitHub Stats"
-          />
+              <img
+                className="stats-image"
+                src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Sanjayraj-k&theme=radical"
+                alt="GitHub Stats"
+              />
             </div>
           </motion.div>
 
@@ -79,9 +79,9 @@ const Resume = ({ textEnter, textLeave }) => {
             </motion.h3>
             <div className="leetcode-container">
               <a href="https://leetcode.com/u/Sanjayrajk/">
-                <img 
+                <img
                   className="stats-image"
-                  src="https://leetcard.jacoblin.cool/Sanjayrajk?theme=dark&font=source_code_pro&ext=heatmap" 
+                  src="https://leetcard.jacoblin.cool/Sanjayrajk?theme=dark&font=source_code_pro&ext=heatmap"
                   alt="LeetCode Stats"
                 />
               </a>

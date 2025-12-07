@@ -267,6 +267,17 @@ const HomePage = ({
                   <FiChevronRight />
                 </button>
               </div>
+
+              {/* Dot Indicators */}
+              <div className="slider-dots">
+                {achievements.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`slider-dot ${currentAchievement === index ? 'active' : ''}`}
+                    onClick={() => setCurrentAchievement(index)}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
