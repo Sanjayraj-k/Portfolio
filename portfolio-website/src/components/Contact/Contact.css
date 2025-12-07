@@ -172,6 +172,7 @@ form {
 
   .contact-info {
     padding: 20px;
+    margin-left: 0;
   }
 }
 
@@ -217,6 +218,12 @@ form {
   .contact-info p {
     font-size: 0.95rem;
     text-align: center;
+  }
+
+  .contact-details-row {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
   }
 
   .info-item {

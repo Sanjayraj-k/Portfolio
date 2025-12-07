@@ -95,6 +95,24 @@
     width: 100%;
     position: relative;
     z-index: 1;
+    overflow-x: auto;
+}
+
+.streak-container a,
+.leetcode-container a,
+.streak-container a:hover,
+.leetcode-container a:hover,
+.streak-container a:active,
+.leetcode-container a:active,
+.streak-container a:focus,
+.leetcode-container a:focus,
+.streak-container a:visited,
+.leetcode-container a:visited {
+    text-decoration: none !important;
+    border: none !important;
+    outline: none !important;
+    display: block;
+    box-shadow: none;
 }
 
 .stats-image {
@@ -115,6 +133,8 @@
 
 .streak-container img,
 .leetcode-container img {
+    max-width: 100%;
+    height: auto;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     transition: all 0.4s ease;
@@ -179,6 +199,10 @@
         padding: 40px 0;
     }
 
+    .stats-container {
+        padding: 0 10px;
+    }
+
     .stats-container h2 {
         font-size: 1.8rem;
         margin-bottom: 25px;
@@ -189,13 +213,26 @@
     }
 
     .stat-card {
-        padding: 20px;
+        padding: 15px;
         border-radius: 16px;
+        overflow: hidden;
     }
 
     .stat-card h3 {
         font-size: 1.2rem;
         margin-bottom: 15px;
+    }
+
+    .streak-container,
+    .leetcode-container {
+        gap: 12px;
+    }
+
+    .streak-container img,
+    .leetcode-container img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 10px;
     }
 
     .stats-image {
