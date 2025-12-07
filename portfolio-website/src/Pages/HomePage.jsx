@@ -4,6 +4,7 @@ import { TypeAnimation } from 'react-type-animation';
 import { FiAward, FiChevronLeft, FiChevronRight, FiCalendar, FiTrendingUp, FiBookOpen, FiLayers } from 'react-icons/fi';
 import About from '../components/About/About';
 import Skills from '../components/Skills/Skills';
+import Experience from '../components/Experience/Experience';
 import Projects from '../components/Projects/Projects';
 import Resume from '../components/Resume/Resume';
 import Contact from '../components/Contact/Contact';
@@ -288,7 +289,11 @@ const HomePage = ({
         <Skills textEnter={textEnter} textLeave={textLeave} />
       </SectionWrapper>
 
-      <SectionWrapper id="projects" onVisible={() => handleSectionChange('projects')}>
+      <SectionWrapper id="experience" onVisible={() => handleSectionChange('experience')}>
+        <Experience textEnter={textEnter} textLeave={textLeave} />
+      </SectionWrapper>
+
+      <SectionWrapper id="projects" dark onVisible={() => handleSectionChange('projects')}>
         <Projects
           projectEnter={projectEnter}
           projectLeave={projectLeave}
