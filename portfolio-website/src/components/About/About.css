@@ -24,6 +24,7 @@
   line-height: 1.8;
   color: var(--text-secondary);
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 .about-image {

@@ -18,7 +18,7 @@ const projects = [
   {
     id: 1,
     title: 'Ticket Booking Chatbot',
-    description: 'An AI chatbot system for Chennai Museum that lets users explore exhibits, book tickets, and make payments. Built with React.js, Flask, and MongoDB, it uses LangChain with LLaMA 3 for smart, natural conversations. Razorpay handles secure payments.',
+    description: 'AI-powered chatbot for Chennai Museum that allows users to chat, check ticket availability, and complete bookings with secure payments. Supports WhatsApp message updates and digital ticket sharing for a seamless experience.',
     tags: ['React.js', 'Flask', 'MongoDB', 'Razorpay', 'LangChain', 'LLaMA 3'],
     image: ticketImage,
     github: 'https://github.com/Sanjayraj-k/TicketBookingchatbot.git',
@@ -27,7 +27,7 @@ const projects = [
   {
     id: 2,
     title: 'AI Quiz Generator with Proctor System',
-    description: 'An AI quiz app with dashboards for teachers and students. Teachers upload PDFs to auto-generate quizzes, and students take tests with proctoring features like face tracking and tab switch alerts. Built with React.js, Flask, and MongoDB using LangChain and LLaMA 4.',
+    description: 'AI-based quiz generator where teachers upload PDFs and create topic-specific quizzes. Students practice with videos, audio, and PDFs. Includes auto question generation, score tracking, and proctoring with face and tab-switch detection.',
     tags: ['Teacher Dashboard', 'Student Dashboard', 'React.js', 'Flask', 'MongoDB', 'LangChain', 'LLaMA 3', 'Proctoring'],
     image: quizImage,
     github: 'https://github.com/Sanjayraj-k/AI_Proctor_Quiz.git',
@@ -36,7 +36,7 @@ const projects = [
   {
     id: 3,
     title: 'AI-Powered Mock Interview Platform',
-    description: 'A full-stack AI-driven mock interview system with LLM-based dynamic question generation, aptitude and coding rounds, and real-time proctoring (face detection, audio monitoring, tab switch tracking). Built using React.js, Flask, and MongoDB with Docker for code execution.',
+    description: 'A full-stack platform offering multi-round interview simulations with aptitude, coding, and AI-based HR rounds. Includes automated scoring, real-time proctoring, analytics dashboards, and ATS-based resume screening. Users can find company profiles, prepare with community forums, and upload their own study materials to generate custom questions with summaries and reference pages for revision.',
     tags: ['React.js', 'Flask', 'MongoDB', 'LLM', 'OpenCV', 'Docker'],
     image: interviewImage,
     github: 'https://github.com/Sanjayraj-k/Mock_Interview',
@@ -72,8 +72,8 @@ const projects = [
   {
     id: 7,
     title: 'Fitness Tracker App',
-    description: 'A full-stack fitness tracking app that allows users to log workouts, track calories, and monitor progress through dynamic dashboards. Features include daily activity logging, progress charts, goal setting, and motivational summaries. Built using React Native for the frontend, Node.js for backend APIs, and MongoDB for storing user data securely.',
-    tags: ['React Native', 'Node.js', 'MongoDB', 'Fitness', 'Workout Tracker', 'Dashboard'],
+    description: 'A full-stack fitness tracking app where users log workouts, track calories, and monitor progress through interactive dashboards. Supports daily activity tracking, personalized fitness goals, and AI-based health insights.',
+    tags: ['React Native', 'Node.js', 'MongoDB', 'LLaMA 4'],
     image: fitnessAppImage,
     github: 'https://github.com/Sanjayraj-k/Fitness_app.git',
     live: 'https://drive.google.com/drive/folders/1OOWh5aCHHF4S2SPqfTUkguF_ebY8Figg',
@@ -81,7 +81,7 @@ const projects = [
   {
     id: 8,
     title: 'AI ClassBot Assistant',
-    description: 'ClassBot is an AI-powered assistant built with Streamlit and LLaMA 3 via LangChain, designed to manage student records using natural language commands. It connects to an SQL database (like SQLite or MySQL) to perform real-time queries such as finding the top-scoring student whose name starts with "S" or deleting students without any recorded marks. Just type your request in plain English and let ClassBot handle the SQL logic behind the scenes.',
+    description: 'An AI chatbot that manages student records using natural language commands. It converts user queries into SQL actions like search, update, and delete  no database knowledge required.',
     tags: ['Streamlit', 'SQL', 'LangChain', 'LLaMA 3', 'AI Chatbot', 'EdTech', 'NLP'],
     image: classbotImage,
     github: 'https://github.com/Sanjayraj-k/classbot.git',
@@ -90,14 +90,14 @@ const projects = [
   {
     id: 9,
     title: 'ML Streamlit App – Sentiment Analysis & Sleep Prediction',
-    description: 'This Streamlit-powered web app combines two powerful machine learning features in one interface. The Sentiment Analysis module uses Logistic Regression with NLTK preprocessing, enhanced via GridSearchCV for optimal accuracy. The Sleep Time Prediction module applies a Random Forest Regressor to estimate ideal sleep duration based on user data. This project demonstrates my ability to blend data preprocessing, ML modeling, and user-friendly deployment — all in a clean, interactive UI.',
+    description: 'A Streamlit app that provides sentiment analysis using Logistic Regression and predicts ideal sleep duration with a Random Forest model. Combines ML preprocessing, model evaluation, and an interactive UI for real-time insights.',
     tags: ['Streamlit', 'Logistic Regression', 'Random Forest', 'NLTK', 'GridSearchCV', 'Machine Learning', 'Sentiment Analysis', 'Regression'],
     image: mlmodelImage,
     github: 'https://github.com/Sanjayraj-k/MlModels.git',
     live: 'https://mlmodels2.streamlit.app/',
   },
-  
-  
+
+
 
 ];
 
