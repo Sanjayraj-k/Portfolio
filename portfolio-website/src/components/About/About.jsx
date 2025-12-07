@@ -23,7 +23,7 @@ const About = ({ textEnter, textLeave }) => {
           >
             About Me
           </motion.h2>
-          
+
           <motion.div
             className="about-text"
             initial={{ y: 50, opacity: 0 }}
@@ -32,20 +32,12 @@ const About = ({ textEnter, textLeave }) => {
             viewport={{ once: true }}
           >
             <p>
-            I'm Sanjay, a Full Stack Developer and AI enthusiast with hands-on experience in building real-world projects using React.js, Flask, Python, and LLMs. From smart ticket bots to AI quiz systems, I love solving problems with tech. Currently exploring LangChain,Langgraph RAG pipelines, and YOLOv10
-</p>
-
-            <p>
-              I specialize in JavaScript technologies across the whole stack (React.js, Node.js, Express, MongoDB). 
-              I love creating efficient, scalable, and user-friendly solutions to complex problems.
-            </p>
-            <p>
-              When I'm not coding, you can find me hiking or experimenting with new technologies.
+              I am a passionate <strong>Full Stack</strong> and <strong>GenAI enthusiast</strong> with strong problem-solving skills and a drive to build real-world impactful solutions. I enjoy working across both frontend and backend technologies while integrating advanced AI capabilities to create intelligent applications. I have developed several real-time AI and full stack projects that solve practical problems and enhance user experience. With continuous learning and hands-on development, I strive to innovate and build smart solutions that make a meaningful difference.
             </p>
           </motion.div>
         </div>
-        
-        <motion.div 
+
+        <motion.div
           className="about-image"
           initial={{ scale: 0.8, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
