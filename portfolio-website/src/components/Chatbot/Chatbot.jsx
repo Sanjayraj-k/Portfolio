@@ -49,10 +49,10 @@ const Chatbot = () => {
         setMessages(prev => [...prev, userMessage]);
         setInputText("");
         setIsLoading(true);
-
+        // https://portfolio-1-5qy6.onrender.com/chat
         try {
             // Replace with your actual backend URL if different
-            const response = await fetch('https://portfolio-1-5qy6.onrender.com/chat', {
+            const response = await fetch('http://localhost:5000/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
