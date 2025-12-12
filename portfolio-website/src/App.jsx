@@ -6,7 +6,7 @@ import StarBackground from './components/StarBackground';
 import Chatbot from './components/Chatbot/Chatbot';
 import './LoadingAnimation.css';
 import about from './assets/images/profile.png';
-import { Analytics } from "@vercel/analytics/next"
+
 // Assuming this is the path to your profile image
 // Create this new CSS file
 
