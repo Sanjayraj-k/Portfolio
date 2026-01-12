@@ -9,6 +9,7 @@ import Projects from '../components/Projects/Projects';
 import Resume from '../components/Resume/Resume';
 import Contact from '../components/Contact/Contact';
 import SectionWrapper from '../components/SectionWrapper/SectionWrapper';
+
 import './HomePage.css';
 
 // Images
@@ -19,6 +20,7 @@ import resume from '../assets/images/Resume.pdf';
 import exodia from '../assets/images/exodia.jpg';
 import ai from '../assets/images/ai.jpg';
 import gen from '../assets/images/gen ai.jpg';
+import srcas from '../assets/images/srcas.jpg';
 
 const HomePage = ({
   textEnter,
@@ -34,6 +36,16 @@ const HomePage = ({
   const { scrollYProgress } = useScroll();
 
   const achievements = [
+    {
+      id: 8,
+      title: "SRCAS Hackathon 2.0",
+      prize: "1st Prize",
+      project: "LLM for Cyber Issue SOPs",
+      college: "Sri Ramakrishna College of Arts and Science",
+      date: "December 14, 2025",
+      image: srcas
+    }
+    ,
     {
       id: 4,
       title: "GEN AI Cognitive Hackathon",

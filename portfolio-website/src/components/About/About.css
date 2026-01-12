@@ -53,10 +53,24 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   z-index: 2;
   position: relative;
   border-radius: 20px;
   transition: transform 0.5s ease;
+  /* Enhanced image clarity - prevent blur */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  -ms-interpolation-mode: bicubic;
+  /* Ensure sharp rendering at all zoom levels */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
+  /* Prevent blur during transforms */
+  will-change: transform;
+  /* Additional sharpness */
+  filter: contrast(1.02) brightness(1.01);
 }
 
 .glow-effect {
