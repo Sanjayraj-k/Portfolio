@@ -64,7 +64,7 @@ const Chatbot = () => {
 
         try {
             // Replace with your actual backend URL if different
-            const response = await fetch('http://localhost:10000/chat', {
+            const response = await fetch('https://portfolio-2-ahnp.onrender.com/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
