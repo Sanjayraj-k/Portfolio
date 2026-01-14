@@ -38,11 +38,8 @@
     bottom: 80px;
     right: 0;
     width: 350px;
-    /* Default width */
     height: 500px;
-    /* Default height */
     background: rgba(17, 24, 39, 0.85);
-    /* Dark semi-transparent background */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -140,10 +137,10 @@
     line-height: 1.4;
     position: relative;
     word-wrap: break-word;
-    animation: messageFade in 0.3s ease-out forwards;
+    animation: messageFadeIn 0.3s ease-out forwards;
 }
 
-@keyframes messageFade {
+@keyframes messageFadeIn {
     from {
         opacity: 0;
         transform: translateY(10px);
@@ -177,6 +174,70 @@
 
 .message.bot li {
     margin-bottom: 0.3rem;
+}
+
+/* Enhanced Link Styling - Modern Card Design */
+.chatbot-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #e0e7ff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.85rem;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+    border: 1.5px solid rgba(99, 102, 241, 0.4);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin: 6px 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(99, 102, 241, 0.1);
+    position: relative;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+/* Subtle gradient overlay on hover */
+.chatbot-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.chatbot-link:hover::before {
+    left: 100%;
+}
+
+.chatbot-link:hover {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(139, 92, 246, 0.25) 100%);
+    border-color: rgba(139, 92, 246, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.25), 0 2px 8px rgba(139, 92, 246, 0.15);
+    color: #f0f4ff;
+}
+
+.chatbot-link:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Add icon before link (optional - you can add an external link icon) */
+.chatbot-link::after {
+    content: '↗';
+    font-size: 0.75rem;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.chatbot-link:hover::after {
+    opacity: 1;
+    transform: translate(2px, -2px);
 }
 
 /* Typing Indicator */

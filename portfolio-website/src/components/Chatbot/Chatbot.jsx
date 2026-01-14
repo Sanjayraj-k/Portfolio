@@ -31,8 +31,19 @@ const Chatbot = () => {
     const formatMessage = (text) => {
         // First handle newlines to preserve structure
         let formatted = text.replace(/\n/g, '<br/>');
+
         // Handle bold text (**text**)
         formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+        // Convert URLs to clickable links
+        // Updated regex that excludes trailing punctuation
+        const urlRegex = /(https?:\/\/[^\s<]+[^<.,:;?!\)\]\s])|(www\.[^\s<]+[^<.,:;?!\)\]\s])/g;
+        formatted = formatted.replace(urlRegex, (url) => {
+            // Add https:// if the URL starts with www.
+            const href = url.startsWith('www.') ? `https://${url}` : url;
+            return `<a href="${href}" target="_blank" rel="noopener noreferrer" class="chatbot-link">${url}</a>`;
+        });
+
         return formatted;
     };
 
@@ -50,9 +61,10 @@ const Chatbot = () => {
         setInputText("");
         setIsLoading(true);
         // https://portfolio-1-5qy6.onrender.com/chat
+
         try {
             // Replace with your actual backend URL if different
-            const response = await fetch('http://localhost:5000/chat', {
+            const response = await fetch('http://localhost:10000/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
