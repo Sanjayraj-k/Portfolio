@@ -62,7 +62,7 @@ const HomePage = ({
       title: "GEN AI Cognitive Hackathon",
       prize: "1st Prize",
       project: "StudyMate - AI Study Assistant",
-      college: "PSG College of Technology",
+      college: "Kongu Engineering College",
       date: "September 2025",
       image: gen
     },
@@ -71,7 +71,7 @@ const HomePage = ({
       title: "CSD 24 Hour Hackathon",
       prize: "1st Prize",
       project: "AI Quiz Generator",
-      college: "PSG College of Technology",
+      college: "Kongu Engineering College",
       date: "March 2025",
       image: achievementsimg
     },
@@ -89,7 +89,7 @@ const HomePage = ({
       title: "CSI Project Expo",
       prize: "1st Prize",
       project: "Museum Ticket Chatbot",
-      college: "PSG College of Technology",
+      college: "Kongu Engineering College",
       date: "April 2025",
       image: achievementsimg3
     },
