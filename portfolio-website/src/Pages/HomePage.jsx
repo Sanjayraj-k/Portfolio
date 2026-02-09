@@ -21,7 +21,8 @@ import exodia from '../assets/images/exodia.jpg';
 import ai from '../assets/images/ai.jpg';
 import gen from '../assets/images/gen ai.jpg';
 import srcas from '../assets/images/srcas.jpg';
-
+import cybot from '../assets/images/cybot.jpeg';
+import kpr from '../assets/images/kpr.jpg';
 const HomePage = ({
   textEnter,
   textLeave,
@@ -36,16 +37,26 @@ const HomePage = ({
   const { scrollYProgress } = useScroll();
 
   const achievements = [
+
     {
       id: 8,
       title: "SRCAS Hackathon 2.0",
       prize: "1st Prize",
       project: "LLM for Cyber Issue SOPs",
       college: "Sri Ramakrishna College of Arts and Science",
-      date: "December 14, 2025",
+      date: "December,2025",
       image: srcas
     }
     ,
+    {
+      id: 9,
+      title: "Cybot Fusion'26",
+      prize: "2nd Prize",
+      project: "Real Time Phishing Detection",
+      college: "Kongu Engineering College",
+      date: "February,2026",
+      image: cybot
+    },
     {
       id: 4,
       title: "GEN AI Cognitive Hackathon",
@@ -84,19 +95,19 @@ const HomePage = ({
     },
     {
       id: 5,
-      title: "KPR Tech Auro 2.0",
+      title: "IEEE Version -3.0",
       prize: "3rd Prize",
-      project: "Innovative AI Solution",
-      college: "KPR Institute",
+      project: "NETGEN AUTOMATED INTERVIEW HUB",
+      college: "Kongu Engineering College",
       date: "September 2025",
-      image: gen
+      image: kpr
     },
     {
       id: 6,
       title: "Exodica Hackathon",
       prize: "1st Prize",
       project: "Face Album Matching",
-      college: "PSG College of Technology",
+      college: "Kongu Engineering College",
       date: "2025",
       image: exodia
     },
@@ -105,7 +116,7 @@ const HomePage = ({
       title: "Newells2K25",
       prize: "1st Prize",
       project: "AI Mock Interviewer",
-      college: "PSG College of Technology",
+      college: "Kongu Engineering College",
       date: "October 2025",
       image: ai
     }
