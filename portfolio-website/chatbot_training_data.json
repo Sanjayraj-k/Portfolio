@@ -406,6 +406,38 @@
             "project": "Hackathon Project",
             "venue": "2025",
             "date": "2025"
+        },
+        {
+            "id": 10,
+            "event": "CSI 24 Hour Hackathon",
+            "prize": "1st Prize",
+            "project": "Cyber Security In Email",
+            "venue": "2026",
+            "date": "2026"
+        },
+        {
+            "id": 11,
+            "event": "HCS Coding Challenge",
+            "prize": "2st Prize",
+            "project": "Hackathon Project",
+            "venue": "2026",
+            "date": "2026"
+        },
+        {
+            "id": 12,
+            "event": "Eareyes 2k26",
+            "prize": "1st Prize",
+            "project": "paper presentation and project presentation",
+            "venue": "2026",
+            "date": "2026"
+        },
+        {
+            "id": 13,
+            "event": "GEG",
+            "prize": "1st Prize",
+            "project": "paper presentation",
+            "venue": "2026",
+            "date": "2026"
         }
     ],
     "competitive_programming": {
@@ -456,6 +488,6 @@
     "areas_of_interest": [
         "Full Stack Development",
         "Machine Learning",
-        "Generative AI"
+        "Agentic AI"
     ]
 }

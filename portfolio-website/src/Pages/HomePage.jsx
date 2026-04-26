@@ -23,6 +23,10 @@ import gen from '../assets/images/gen ai.jpg';
 import srcas from '../assets/images/srcas.jpg';
 import cybot from '../assets/images/cybot.jpeg';
 import kpr from '../assets/images/kpr.jpg';
+import ai1 from '../assets/images/ai1.jpeg';
+import eie1 from '../assets/images/eie1.jpeg';
+import gender from '../assets/images/gender.jpeg';
+import csi2 from '../assets/images/csi2.jpeg';
 const HomePage = ({
   textEnter,
   textLeave,
@@ -119,6 +123,42 @@ const HomePage = ({
       college: "Kongu Engineering College",
       date: "October 2025",
       image: ai
+    },
+    {
+      id: 10,
+      title: "CSI 24 Hour Hackathon",
+      prize: "1st Prize",
+      project: "Cyber Security In Email",
+      college: "Kongu Engineering College",
+      date: "2026",
+      image: csi2 // Placeholder image
+    },
+    {
+      id: 11,
+      title: "HCS Coding Challenge",
+      prize: "2nd Prize",
+      project: "Hackathon Project",
+      college: "Kongu Engineering College",
+      date: "2026",
+      image: ai1 // Placeholder image
+    },
+    {
+      id: 12,
+      title: "Eareyes 2k26",
+      prize: "1st Prize",
+      project: "paper presentation and project presentation",
+      college: "Kongu Engineering College",
+      date: "2026",
+      image: eie1 // Placeholder image
+    },
+    {
+      id: 13,
+      title: "GEG",
+      prize: "1st Prize",
+      project: "paper presentation",
+      college: "Kongu Engineering College",
+      date: "2026",
+      image: gender// Placeholder image
     }
   ];
 
