@@ -64,7 +64,7 @@ const Chatbot = () => {
 
         try {
             // Replace with your actual backend URL if different
-            const response = await fetch('https://portfolio-2-eqww.onrender.com', {
+            const response = await fetch('https://portfolio-2-eqww.onrender.com/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
