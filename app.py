@@ -29,7 +29,7 @@ PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 INDEX_NAME = "portfolio-chatbot-v2"
 
 # Model Config
-MODEL_NAME = "qwen/qwen3.8-27b"
+MODEL_NAME = "openai/gpt-oss-120b"
 
 # Embedding client (uses Pinecone API key directly)
 embeddings = PineconeEmbeddings(
