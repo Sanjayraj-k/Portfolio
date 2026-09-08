@@ -6,8 +6,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 # LangChain / LangGraph Imports
-from langchain_openai import OpenAIEmbeddings
-from langchain_pinecone import PineconeVectorStore
+from langchain_pinecone import PineconeVectorStore, PineconeEmbeddings
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.output_parsers import StrOutputParser
@@ -16,6 +15,8 @@ from pinecone import Pinecone
 from langgraph.graph import StateGraph, END
 
 # Load ENV
+env_path = os.path.join(os.path.dirname(__file__), '.env')
+load_dotenv(dotenv_path=env_path)
 load_dotenv()
 
 # Flask Setup
@@ -23,20 +24,17 @@ app = Flask(__name__)
 CORS(app)
 
 # Environment Variables
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
-INDEX_NAME = "portfolio-chatbot"
+GROQ_API_KEY = os.getenv("GROQ_API_KEY") 
+PINECONE_API_KEY = os.getenv("PINECONE_API_KEY") 
+INDEX_NAME = "portfolio-chatbot-v2"
 
 # Model Config
-MODEL_NAME = "llama-3.1-8b-instant"
-EMBEDDING_MODEL = "openai/text-embedding-3-small"  # 1536 dim
+MODEL_NAME = "qwen/qwen3.8-27b"
 
-# Embedding client
-embeddings = OpenAIEmbeddings(
-    model=EMBEDDING_MODEL,
-    openai_api_key=OPENROUTER_API_KEY,
-    base_url="https://openrouter.ai/api/v1"
+# Embedding client (uses Pinecone API key directly)
+embeddings = PineconeEmbeddings(
+    model="multilingual-e5-large",
+    pinecone_api_key=PINECONE_API_KEY
 )
 
 vectorstore = None
@@ -373,11 +371,12 @@ def chat():
         return jsonify({"response": result["messages"][-1].content})
     except Exception as e:
         print("ChatError:", e)
-        return jsonify({"error": "LLM Processing Failed"}), 500
+        print(traceback.format_exc())
+        return jsonify({"error": f"LLM Processing Failed: {str(e)}"}), 500
 
 
 # ------------------------------------------------------------
 #                       START SERVER
 # ------------------------------------------------------------
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)), debug=True)
